@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33480403758291724}
   - component: {fileID: 23472643057977824}
   - component: {fileID: 95797726701017898}
-  - component: {fileID: 54206031583208998}
   m_Layer: 0
   m_Name: Mesh_Platform_Asteroid_Blockout_01
   m_TagString: Untagged
@@ -39,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4043324968500650}
   - component: {fileID: 64020879957045242}
+  - component: {fileID: 54705391793242120}
   m_Layer: 0
   m_Name: Mesh_Platform_Asteroid_Blockout_01
   m_TagString: Untagged
@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1840248124875486}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -51.14772, y: -56.093597, z: -139.17694}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4320937050072756}
@@ -114,12 +114,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1356334598490578}
   m_Mesh: {fileID: 4300000, guid: 22b35b10babc36944b80f55bf9c56219, type: 3}
---- !u!54 &54206031583208998
+--- !u!54 &54705391793242120
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1356334598490578}
+  m_GameObject: {fileID: 1840248124875486}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0

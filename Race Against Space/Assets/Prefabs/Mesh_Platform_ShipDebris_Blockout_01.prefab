@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4833476600334578}
   - component: {fileID: 64583185363086326}
+  - component: {fileID: 54101759251290948}
   m_Layer: 0
   m_Name: Mesh_Platform_ShipDebris_Blockout_01
   m_TagString: Untagged
@@ -38,7 +39,6 @@ GameObject:
   - component: {fileID: 33207183153481464}
   - component: {fileID: 23177393957655348}
   - component: {fileID: 95535200317843228}
-  - component: {fileID: 54048752299676032}
   m_Layer: 0
   m_Name: Mesh_Platform_ShipDebris_Blockout_01
   m_TagString: Untagged
@@ -114,12 +114,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1881362425025524}
   m_Mesh: {fileID: 4300000, guid: 5c345eccb3aaffb4988ee0ae5fb13607, type: 3}
---- !u!54 &54048752299676032
+--- !u!54 &54101759251290948
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1881362425025524}
+  m_GameObject: {fileID: 1506183823970240}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
