@@ -264,6 +264,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4294821954481836}
+  - component: {fileID: 114747868219216726}
   m_Layer: 0
   m_Name: Chunk_003
   m_TagString: LevelChunk
@@ -889,7 +890,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1441972804581330}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -17.912724, y: -28.025011, z: -68.49197}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4790835673442486}
@@ -2922,3 +2923,16 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114747868219216726
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1441972804581330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 517690aa0c76e144ba8104bf44c88912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformMoveSpeed: 3
+  gameObjectDeleteY: -200
