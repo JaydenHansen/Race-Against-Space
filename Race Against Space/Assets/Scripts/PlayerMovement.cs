@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using XboxCtrlrInput;
+
 
 public class PlayerMovement : MonoBehaviour {
 
@@ -54,6 +56,10 @@ public class PlayerMovement : MonoBehaviour {
         {
             rb.AddForce(new Vector3(-3, 0, 0));
         }
+        if ((jump) && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
+        {
+            rb.AddForce(new Vector3(0, 150, 0));
+        }
         if ((Input.GetKeyDown(KeyCode.Q)) && energy > 0)
         {
             energy = energy - 5;
@@ -64,14 +70,5 @@ public class PlayerMovement : MonoBehaviour {
             energy = energy - 5;
             rb.AddForce(new Vector3(50, 80, 0));
         }
-        if ((jump) && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
-        {
-            rb.AddForce(new Vector3(0, 150, 0));
-		}
-        //if (!jump && energy > 0 && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)))
-        //{
-        //    rb.AddForce(0, 50, 0);
-        //    energy = energy - 10;
-        //}
 	}
 }
