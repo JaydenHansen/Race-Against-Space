@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class energyUI : MonoBehaviour {
-    private GUI gui; 
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+    // Use this for initialization
+    public PlayerController playerMove;
+
+    public Text energy;
+    void Start(){
+        playerMove = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+    }
+	void FixedUpdate () {
+        energy.text = playerMove.energy.ToString();
 	}
 }
