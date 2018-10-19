@@ -38,13 +38,13 @@ public class PlayerController : MonoBehaviour
 
         isGrounded = Physics.Raycast(transform.position, rayDir, out rayHit, lengthOfRaycast);
     }
-    void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "energyReplenish")
-        {//if the object is an energy replenish the player gets some energy returned
-            energy = energy + 10;
-        }
-    }
+    //void OnCollisionEnter(Collision other)
+    //{
+        //if (other.gameObject.tag == "energyReplenish")
+        //{//if the object is an energy replenish the player gets some energy returned
+         //   energy = energy + 10;
+       // }
+   // }
     private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.tag == "Player")

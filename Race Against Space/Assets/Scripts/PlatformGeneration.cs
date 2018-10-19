@@ -36,7 +36,7 @@ public class PlatformGeneration : MonoBehaviour {
         if (numOfPlatforms.Length <= numOfPlatformsRemaining)
         {
             // ...Spawn a new chunk at the height marker
-            Instantiate(selectedChunk, new Vector3(0, heightMarker.transform.position.y, -2.75f), Quaternion.identity);
+            Instantiate(selectedChunk, new Vector3(0, heightMarker.transform.position.y, -0), Quaternion.identity);
             // ...Delete the current height marker
             Destroy(heightMarker);
             // ...Select the next chunk
