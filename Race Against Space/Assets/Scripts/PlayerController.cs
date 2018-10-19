@@ -5,17 +5,21 @@ using XboxCtrlrInput;
 
 public class PlayerController : MonoBehaviour
 {
-
     public Rigidbody rigidBody;
     public Rigidbody otherPlayer;
+
     public XboxController controller;
     public GameObject controlsMenu;
-    public GameObject player;
+
     public float movementSpeed = 10.0f;
     public float maxSpeed = 8.0f;
     public float jump = 125.0f;
+
     public float energy = 100.0f; 
-    public bool isGrounded = false;
+
+    public bool isGrounded;
+    public float lengthOfRaycast = 2.0f;
+
     public bool canPunch = false; 
     public Vector3 punchLeft = new Vector3(-100, 100, 0);
     public Vector3 punchRight = new Vector3(100, 100, 0);
@@ -24,16 +28,18 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         //gets the rigidbody of the player
-        player = this.gameObject;
         rigidBody = GetComponent<Rigidbody>();
     }
-    void OnCollisionEnter(UnityEngine.Collision other)
+
+    private void Update()
     {
-        //checks the tags of the objects colliding with the player
-        if (other.gameObject.tag == "NotKillObsticle")
-        {//if the object is a not kill obsticle isGrounded is set to true to allow jumping 
-            isGrounded = true;
-        }
+        Vector3 rayDir = transform.TransformDirection(Vector3.down);
+        RaycastHit rayHit;
+
+        isGrounded = Physics.Raycast(transform.position, rayDir, out rayHit, lengthOfRaycast);
+    }
+    void OnCollisionEnter(Collision other)
+    {
         if (other.gameObject.tag == "energyReplenish")
         {//if the object is an energy replenish the player gets some energy returned
             energy = energy + 10;
@@ -47,19 +53,15 @@ public class PlayerController : MonoBehaviour
             otherPlayer = other.gameObject.GetComponent<Rigidbody>();
         }
     }
-    private void OnCollisionExit(UnityEngine.Collision other)
+    private void OnCollisionExit(Collision other)
     {
-        if (other.gameObject.tag == "NotKillObsticle")
-        {//once the player is no longer colliding with the not kill obsticle isGrounded is set to false
-            isGrounded = false;
-        }
         if(other.gameObject.tag == "Player")
         {//if the other player has left the collision the player is unable to punch
             canPunch = false; 
         }
     }
 
-    void punch()
+    void PlayerPunch()
     {
         if (canPunch)
         {//if punch is true you are able to punch
@@ -114,18 +116,18 @@ public class PlayerController : MonoBehaviour
             rigidBody.AddForce(new Vector3(0, jump, 0));
         }
     }
-    void checkIfPlayerIsAlive()
+    void CheckIfPlayerIsAlive()
     {
         if(energy <= 0)
         {
-            Destroy(player);
+            Destroy(this.gameObject);
         }
     }
     void FixedUpdate()
     {
         MovePlayer();
-        punch();
-        checkIfPlayerIsAlive(); 
+        PlayerPunch();
+        CheckIfPlayerIsAlive(); 
         //pauseGame();
         //checkRunning(); 
     }
