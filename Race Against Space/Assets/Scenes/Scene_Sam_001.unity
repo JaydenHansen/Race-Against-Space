@@ -716,12 +716,13 @@ MonoBehaviour:
   otherPlayer: {fileID: 0}
   controller: 3
   controlsMenu: {fileID: 1368586955}
-  player: {fileID: 0}
   movementSpeed: 10
   maxSpeed: 8
   jump: 125
   energy: 100
   isGrounded: 0
+  paused: 0
+  lengthOfRaycast: 2
   canPunch: 0
   punchLeft: {x: -1000, y: 300, z: 0}
   punchRight: {x: 1000, y: 300, z: 0}
@@ -1333,12 +1334,13 @@ MonoBehaviour:
   otherPlayer: {fileID: 0}
   controller: 4
   controlsMenu: {fileID: 1368586955}
-  player: {fileID: 0}
   movementSpeed: 10
   maxSpeed: 8
   jump: 125
   energy: 100
   isGrounded: 0
+  paused: 0
+  lengthOfRaycast: 2
   canPunch: 0
   punchLeft: {x: -1000, y: 300, z: 0}
   punchRight: {x: 1000, y: 300, z: 0}
@@ -1905,12 +1907,13 @@ MonoBehaviour:
   otherPlayer: {fileID: 0}
   controller: 2
   controlsMenu: {fileID: 1368586955}
-  player: {fileID: 0}
   movementSpeed: 10
   maxSpeed: 8
   jump: 125
   energy: 100
   isGrounded: 0
+  paused: 0
+  lengthOfRaycast: 2
   canPunch: 0
   punchLeft: {x: -100, y: 100, z: 0}
   punchRight: {x: 100, y: 100, z: 0}
@@ -2599,12 +2602,13 @@ MonoBehaviour:
   otherPlayer: {fileID: 0}
   controller: 1
   controlsMenu: {fileID: 1368586955}
-  player: {fileID: 0}
   movementSpeed: 10
   maxSpeed: 8
   jump: 125
   energy: 100
   isGrounded: 0
+  paused: 0
+  lengthOfRaycast: 2
   canPunch: 0
   punchLeft: {x: -100, y: 100, z: 0}
   punchRight: {x: 100, y: 100, z: 0}
