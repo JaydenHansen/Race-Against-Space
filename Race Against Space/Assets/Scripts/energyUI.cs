@@ -9,8 +9,7 @@ public class energyUI : MonoBehaviour {
     public PlayerController playerMove;
 
     public Text energy;
-    void Start(){
-        playerMove = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+    void Start(){ 
     }
 	void FixedUpdate () {
         energy.text = playerMove.energy.ToString();
