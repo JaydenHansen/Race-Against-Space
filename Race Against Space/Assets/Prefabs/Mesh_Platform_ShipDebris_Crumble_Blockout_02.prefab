@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 4012400360924304}
   - component: {fileID: 64242047440131098}
   - component: {fileID: 54095608672134662}
+  - component: {fileID: 114161834414373548}
   m_Layer: 0
   m_Name: Mesh_Platform_ShipDebris_Crumble_Blockout_02
   m_TagString: Untagged
@@ -245,3 +246,15 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114161834414373548
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1788742948518810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7ba0e473da1fa643ad8fdc81c403d46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeShatter: 3

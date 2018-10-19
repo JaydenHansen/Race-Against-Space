@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class ShatterPlatforms : MonoBehaviour {
 
-    public int timeBeforeShatter = 3;
+    public float timeBeforeShatter = 3;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            Destroy(this.gameObject, 1 + timeBeforeShatter);
+            Destroy(this.gameObject, timeBeforeShatter);
         }
     }
 }

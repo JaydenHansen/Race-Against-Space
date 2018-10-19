@@ -312,7 +312,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Yeet yeet yeet
+  m_Text: 
 --- !u!222 &331194770
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1385,7 +1385,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Another day another dollar lets get this bread
+  m_Text: 
 --- !u!222 &1666612608
 CanvasRenderer:
   m_ObjectHideFlags: 0
