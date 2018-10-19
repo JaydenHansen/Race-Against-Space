@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public float energy = 100.0f; 
 
     public bool isGrounded;
+    public bool paused = false;
     public float lengthOfRaycast = 2.0f;
 
     public bool canPunch = false; 
@@ -37,14 +38,15 @@ public class PlayerController : MonoBehaviour
         RaycastHit rayHit;
 
         isGrounded = Physics.Raycast(transform.position, rayDir, out rayHit, lengthOfRaycast);
+        pauseGame();
     }
     //void OnCollisionEnter(Collision other)
     //{
-        //if (other.gameObject.tag == "energyReplenish")
-        //{//if the object is an energy replenish the player gets some energy returned
-         //   energy = energy + 10;
-       // }
-   // }
+    //if (other.gameObject.tag == "energyReplenish")
+    //{//if the object is an energy replenish the player gets some energy returned
+    //   energy = energy + 10;
+    // }
+    // }
     private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.tag == "Player")
@@ -75,24 +77,21 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-    //public void checkRunning()
-    //{
-    //    if (Time.timeScale == 1)
-    //    {
-    //        controlsMenu.SetActive(false);
-    //    }
-    //    else
-    //    {
-    //        controlsMenu.SetActive(true);
-    //    }
-    //}
-    //void pauseGame()
-    //{
-    //    if (XCI.GetButtonDown(XboxButton.Start, controller))
-    //    {
-    //        Time.timeScale = 0;
-    //    }
-    //}
+    void pauseGame()
+    {
+        if (XCI.GetButtonDown(XboxButton.Start, controller) && !paused)
+        {//if start button is pressed while game is running it will pause the game and bring up the controls menu
+            Time.timeScale = 0;
+            controlsMenu.SetActive(true);
+            paused = true; 
+        }
+        else if(XCI.GetButtonDown(XboxButton.Start, controller) && paused)
+        {//if start button is pressed while paused the game will resume 
+            Time.timeScale = 1;
+            controlsMenu.SetActive(false);
+            paused = false; 
+        }
+    }
 
     private void MovePlayer()
     {
@@ -128,8 +127,6 @@ public class PlayerController : MonoBehaviour
         MovePlayer();
         PlayerPunch();
         CheckIfPlayerIsAlive(); 
-        //pauseGame();
-        //checkRunning(); 
     }
 }
 
