@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BlackoutTestScript : MonoBehaviour {
+    public Light playerGlow; 
     private bool isBlackout = false;
     private float timer = 0.0f;
 	// Use this for initialization
@@ -26,10 +27,12 @@ public class BlackoutTestScript : MonoBehaviour {
         if (isBlackout)
         {
             this.GetComponent<Light>().enabled = false;
+            playerGlow.intensity = 20; 
         }
         if (!isBlackout)
         {
             this.GetComponent<Light>().enabled = true;
+            playerGlow.intensity = 5;
         }
     }
 }
