@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BlackoutTestScript : MonoBehaviour {
-    public Light playerGlow; 
+    public Light playerGlow;
     private bool isBlackout = false;
     private float timer = 0.0f;
 	// Use this for initialization
@@ -33,6 +33,8 @@ public class BlackoutTestScript : MonoBehaviour {
             //if the blackout is active it will turn off the level light and increase the intensity of the light the player gives off
             this.GetComponent<Light>().enabled = false;
             playerGlow.intensity = 20; 
+            
+            
         }
         if (!isBlackout)
         {
