@@ -18,7 +18,7 @@ public class energyReduce : MonoBehaviour {
         if(energyBar.value <= 0)
         {
             deathText.IsActive();
-            deathText.text = "Fookin dead";
+            deathText.text = "Connection Lost";
             Destroy(energyBar);
         }
         if(playerMove == null)
