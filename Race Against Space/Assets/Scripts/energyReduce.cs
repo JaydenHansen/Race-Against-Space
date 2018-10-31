@@ -8,6 +8,7 @@ public class energyReduce : MonoBehaviour {
     public PlayerController playerMove;
     public Slider energyBar;
     public Text deathText;
+    public 
     // Use this for initialization
     void Start () {
 	}
@@ -17,7 +18,6 @@ public class energyReduce : MonoBehaviour {
         energyBar.value = playerMove.energy;
         if(energyBar.value <= 0)
         {
-            deathText.IsActive();
             deathText.text = "Connection Lost";
             Destroy(energyBar);
         }
