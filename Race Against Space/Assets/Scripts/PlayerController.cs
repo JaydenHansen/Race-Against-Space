@@ -105,11 +105,22 @@ public class PlayerController : MonoBehaviour
 
         rigidBody.AddForce(movement * movementSpeed);
         Debug.Log(rigidBody.velocity.magnitude);
-        if(rigidBody.velocity.magnitude > maxSpeed)
+        Vector3 velocity = rigidBody.velocity;
+        if(velocity.x > maxSpeed)
         {
-            rigidBody.velocity = rigidBody.velocity.normalized;
-            rigidBody.velocity *= maxSpeed;
+            velocity.x = maxSpeed;
         }
+        if(velocity.x < -maxSpeed)
+        {
+            velocity.x = -maxSpeed;
+        }
+        rigidBody.velocity = velocity;
+
+        //if(rigidBody.velocity.magnitude > maxSpeed)
+        //{
+        //    rigidBody.velocity = rigidBody.velocity.normalized;
+        //    rigidBody.velocity *= maxSpeed;
+        //}
 
         if (XCI.GetButtonDown(XboxButton.A, controller) && isGrounded)
         //if the "a" button is pressed you can jump as long as you are grounded
