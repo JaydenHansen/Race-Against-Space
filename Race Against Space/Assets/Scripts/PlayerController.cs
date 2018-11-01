@@ -5,7 +5,7 @@ using XboxCtrlrInput;
 
 public class PlayerController : MonoBehaviour
 {
-    public Rigidbody rigidBody;
+    private Rigidbody rigidBody;
     public Rigidbody otherPlayer;
 
     public XboxController controller;
@@ -97,19 +97,21 @@ public class PlayerController : MonoBehaviour
     {
         energy -= Time.deltaTime * 1.6f;
         //makes the energy decrease over time
-        print(energy);
+        //print(energy);
         //prints energy to the console to show the energy decreasing
         float axisX = XCI.GetAxis(XboxAxis.LeftStickX, controller);
 
         Vector3 movement = new Vector3(axisX, 0, 0);
 
-        if(rigidBody.velocity.magnitude < maxSpeed)
-            //stops adding force if the player has reached max speed
+        rigidBody.AddForce(movement * movementSpeed);
+        Debug.Log(rigidBody.velocity.magnitude);
+        if(rigidBody.velocity.magnitude > maxSpeed)
         {
-            rigidBody.AddForce(movement * movementSpeed);
+            rigidBody.velocity = rigidBody.velocity.normalized;
+            rigidBody.velocity *= maxSpeed;
         }
 
-        if (XCI.GetButton(XboxButton.A, controller) && isGrounded)
+        if (XCI.GetButtonDown(XboxButton.A, controller) && isGrounded)
         //if the "a" button is pressed you can jump as long as you are grounded
         {
             rigidBody.AddForce(new Vector3(0, jump, 0));
