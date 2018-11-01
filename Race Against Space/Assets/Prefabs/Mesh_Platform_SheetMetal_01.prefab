@@ -41,7 +41,6 @@ GameObject:
   - component: {fileID: 64006948766705432}
   - component: {fileID: 65837828299103364}
   - component: {fileID: 114949285694110602}
-  - component: {fileID: 114845557254695334}
   m_Layer: 0
   m_Name: Mesh_Platform_SheetMetal_01
   m_TagString: Platforms
@@ -204,19 +203,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114845557254695334
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1552059857968998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23fea2d1ad823e048b7a9d96ae5b8ba1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  thisPlatform: {fileID: 0}
-  player: {fileID: 0}
 --- !u!114 &114949285694110602
 MonoBehaviour:
   m_ObjectHideFlags: 1

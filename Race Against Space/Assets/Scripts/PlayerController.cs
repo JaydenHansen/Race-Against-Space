@@ -5,7 +5,7 @@ using XboxCtrlrInput;
 
 public class PlayerController : MonoBehaviour
 {
-    private Rigidbody rigidBody;
+    public Rigidbody rigidBody;
     public Rigidbody otherPlayer;
 
     public XboxController controller;
