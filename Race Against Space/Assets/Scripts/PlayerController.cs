@@ -11,9 +11,9 @@ public class PlayerController : MonoBehaviour
     public XboxController controller;
     public GameObject controlsMenu;
 
-    public float movementSpeed = 10.0f;
-    public float maxSpeed = 8.0f;
-    public float jump = 125.0f;
+    public float movementSpeed = 20.0f;
+    public float maxSpeed = 20.0f;
+    public float jump = 800.0f;
 
     public float energy = 100.0f; 
 
@@ -40,13 +40,6 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics.Raycast(transform.position, rayDir, out rayHit, lengthOfRaycast);
         pauseGame();
     }
-    //void OnCollisionEnter(Collision other)
-    //{
-    //if (other.gameObject.tag == "energyReplenish")
-    //{//if the object is an energy replenish the player gets some energy returned
-    //   energy = energy + 10;
-    // }
-    // }
     private void OnCollisionStay(Collision other)
     {
         if (other.gameObject.tag == "Player")
@@ -97,8 +90,6 @@ public class PlayerController : MonoBehaviour
     {
         energy -= Time.deltaTime * 1.6f;
         //makes the energy decrease over time
-        //print(energy);
-        //prints energy to the console to show the energy decreasing
         float axisX = XCI.GetAxis(XboxAxis.LeftStickX, controller);
 
         Vector3 movement = new Vector3(axisX, 0, 0);
@@ -115,12 +106,6 @@ public class PlayerController : MonoBehaviour
             velocity.x = -maxSpeed;
         }
         rigidBody.velocity = velocity;
-
-        //if(rigidBody.velocity.magnitude > maxSpeed)
-        //{
-        //    rigidBody.velocity = rigidBody.velocity.normalized;
-        //    rigidBody.velocity *= maxSpeed;
-        //}
 
         if (XCI.GetButtonDown(XboxButton.A, controller) && isGrounded)
         //if the "a" button is pressed you can jump as long as you are grounded
