@@ -9,7 +9,7 @@ public class PlatformManagement : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        this.gameObject.transform.position -= new Vector3(0, (platformMoveSpeed * 0.01f), 0);
+		this.gameObject.transform.position -= new Vector3(0, (platformMoveSpeed /*0.01f*/  * Time.deltaTime), 0);
         
         if(this.gameObject.transform.position.y < gameObjectDeleteY)
         {

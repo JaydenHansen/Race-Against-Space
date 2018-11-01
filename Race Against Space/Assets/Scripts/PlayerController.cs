@@ -72,13 +72,13 @@ public class PlayerController : MonoBehaviour
     }
     void pauseGame()
     {
-        if (XCI.GetButtonDown(XboxButton.Start, controller) && !paused)
+        if (XCI.GetButtonDown(XboxButton.Start /*, controller*/) && !paused)
         {//if start button is pressed while game is running it will pause the game and bring up the controls menu
             Time.timeScale = 0;
             controlsMenu.SetActive(true);
             paused = true; 
         }
-        else if(XCI.GetButtonDown(XboxButton.Start, controller) && paused)
+        else if(XCI.GetButtonDown(XboxButton.Start/*, controller*/) && paused)
         {//if start button is pressed while paused the game will resume 
             Time.timeScale = 1;
             controlsMenu.SetActive(false);
