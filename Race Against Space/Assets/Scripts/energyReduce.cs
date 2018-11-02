@@ -32,10 +32,13 @@ public class energyReduce : MonoBehaviour {
             Destroy(energyBar);
             Destroy(playerIcon);
         }
-        
-        if (!playerMove.gameObject.activeInHierarchy)
+
+        if (playerMove.)
         {
-          //  PlayerUI.SetActive(false); 
+            //PlayerUI.SetActive(false); 
+            energyBar.value = 0;
+            PlayerUI.SetActive(false); 
+            
         }
        
     }
