@@ -9,11 +9,13 @@ public class CharacterManager : MonoBehaviour {
     private int selectionIndex = 0;
     private int i = 0;
     public bool isMain;
+    static int playersActive; 
     // Use this for initialization
 
     static bool[] isPlaying = new bool[4];//has a bool playing function so it will load only active players
 
 	void Start () {
+        playersActive = 0; 
         characters = new List<GameObject>();
         foreach(Transform t in transform)
         {
@@ -31,11 +33,13 @@ public class CharacterManager : MonoBehaviour {
         {//if the character is active and selected again they will be unselected
             isPlaying[index] = false; 
             characters[selectionIndex].SetActive(false);
+            playersActive = playersActive - 1;//keeps count of active players
         }
         else if (!characters[selectionIndex].activeInHierarchy)
         {//if the character is selected while inactive they will be activated and selected
             isPlaying[index] = true;
             characters[selectionIndex].SetActive(true);
+            playersActive = playersActive + 1; //keeps count of active players
         }
     }
 
@@ -58,7 +62,7 @@ public class CharacterManager : MonoBehaviour {
         {
             Select(3);
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && playersActive > 1)
         {//loads next scene when ready
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
