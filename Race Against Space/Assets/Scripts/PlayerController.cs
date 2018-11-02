@@ -38,6 +38,10 @@ public class PlayerController : MonoBehaviour
         RaycastHit rayHit;
 
         isGrounded = Physics.Raycast(transform.position, rayDir, out rayHit, lengthOfRaycast);
+        if(energy > 100)
+        {
+            energy = 100.0f; 
+        }
         pauseGame();
     }
     private void OnCollisionStay(Collision other)
