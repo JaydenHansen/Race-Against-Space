@@ -24,7 +24,7 @@ public class energyReduce : MonoBehaviour {
         }
         else
         {
-            energyBar.value = playerMove.energy;
+            energyBar.value = playerMove.playerEnergy;
         }
         if(energyBar.value <= 0)
         {

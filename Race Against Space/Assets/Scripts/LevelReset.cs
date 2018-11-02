@@ -37,7 +37,7 @@ public class LevelReset : MonoBehaviour {
         {
             if (CharacterManager.isPlaying[i])
             {
-                if(charMan.characters[i].GetComponent<PlayerController>().energy > 0)
+                if(charMan.characters[i].GetComponent<PlayerController>().playerEnergy > 0)
                 {
                     survivors++;
                 }

@@ -12,7 +12,7 @@ public class EnergyPickup : MonoBehaviour {
 
         if (player != null)
         {
-            player.energy += pickupAmount;
+            player.playerEnergy += pickupAmount;
             gameObject.SetActive(false);
         }
     }

@@ -5,26 +5,34 @@ using XboxCtrlrInput;
 
 public class PlayerController : MonoBehaviour
 {
+    [HideInInspector] public bool facingRight = true;
+
     public Rigidbody rigidBody;
     public Rigidbody otherPlayer;
 
     public XboxController controller;
-    public GameObject controlsMenu;
+
+    public float playerEnergy = 100.0f;
 
     public float movementSpeed = 20.0f;
     public float maxSpeed = 20.0f;
-    public float jump = 800.0f;
-
-    public float energy = 100.0f; 
+    public float jumpPower = 800.0f;
 
     public bool isGrounded;
+    public float jumpRayLength = 2.0f;
+
+    public bool canPunch;
+    public float punchRayLength = 2.0f;
+
+    public float horizPunchPower = 100f;
+    public float vertPunchPower = 100f;
+
+    public float boostDuration = 2.0f;
+    private float boostTimer;
+    public float boostForce = 100f;
+
     public bool paused = false;
-    public float lengthOfRaycast = 2.0f;
-
-    public bool canPunch = false; 
-    public Vector3 punchLeft = new Vector3(-100, 100, 0);
-    public Vector3 punchRight = new Vector3(100, 100, 0);
-
+    public GameObject controlsMenu;
 
     void Start()
     {
@@ -34,29 +42,31 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        Vector3 rayDir = transform.TransformDirection(Vector3.down);
-        RaycastHit rayHit;
+        Vector3 jumpRayDir = transform.TransformDirection(Vector3.down);
+        RaycastHit jumpRayHit;
+        isGrounded = Physics.Raycast(transform.position, jumpRayDir, out jumpRayHit, jumpRayLength);
 
-        isGrounded = Physics.Raycast(transform.position, rayDir, out rayHit, lengthOfRaycast);
-        if(energy > 100)
-        {
-            energy = 100.0f; 
-        }
-        pauseGame();
+        Vector3 punchRayDir = transform.TransformDirection(Vector3.forward);
+        RaycastHit punchRayHit;
+        canPunch = Physics.Raycast(transform.position, punchRayDir, out punchRayHit, punchRayLength);
+
+        otherPlayer = punchRayHit.rigidbody;
+
+        PauseGame();
     }
-    private void OnCollisionStay(Collision other)
+    void PauseGame()
     {
-        if (other.gameObject.tag == "Player")
-        {//if the player is detected colliding with another player sets punch to true and gets the rigidbody of the other player
-            canPunch = true;
-            otherPlayer = other.gameObject.GetComponent<Rigidbody>();
+        if (XCI.GetButtonDown(XboxButton.Start, controller) && !paused)
+        {//if start button is pressed while game is running it will pause the game and bring up the controls menu
+            Time.timeScale = 0;
+            controlsMenu.SetActive(true);
+            paused = true;
         }
-    }
-    private void OnCollisionExit(Collision other)
-    {
-        if(other.gameObject.tag == "Player")
-        {//if the other player has left the collision the player is unable to punch
-            canPunch = false; 
+        else if (XCI.GetButtonDown(XboxButton.Start, controller) && paused)
+        {//if start button is pressed while paused the game will resume 
+            Time.timeScale = 1;
+            controlsMenu.SetActive(false);
+            paused = false;
         }
     }
 
@@ -64,71 +74,83 @@ public class PlayerController : MonoBehaviour
     {
         if (canPunch)
         {//if punch is true you are able to punch
-            if (XCI.GetButton(XboxButton.RightBumper, controller))
+            if (XCI.GetButton(XboxButton.RightBumper, controller) && facingRight)
             {//if right bumper is hit, hit the player to the right
-                otherPlayer.AddForce(punchRight);
+                otherPlayer.AddForce(new Vector3(horizPunchPower, vertPunchPower, 0));
             }
-            if (XCI.GetButton(XboxButton.LeftBumper, controller))
+           else if (XCI.GetButton(XboxButton.RightBumper, controller) && !facingRight)
             {//if left bumper is hit, hit the player to the left
-                otherPlayer.AddForce(punchLeft);
+                otherPlayer.AddForce(new Vector3(-horizPunchPower, vertPunchPower, 0));
             }
-        }
-    }
-    void pauseGame()
-    {
-        if (XCI.GetButtonDown(XboxButton.Start /*, controller*/) && !paused)
-        {//if start button is pressed while game is running it will pause the game and bring up the controls menu
-            Time.timeScale = 0;
-            controlsMenu.SetActive(true);
-            paused = true; 
-        }
-        else if(XCI.GetButtonDown(XboxButton.Start/*, controller*/) && paused)
-        {//if start button is pressed while paused the game will resume 
-            Time.timeScale = 1;
-            controlsMenu.SetActive(false);
-            paused = false; 
         }
     }
 
     private void MovePlayer()
     {
-        energy -= Time.deltaTime * 1.6f;
+        playerEnergy -= Time.deltaTime * 1.6f;
         //makes the energy decrease over time
         float axisX = XCI.GetAxis(XboxAxis.LeftStickX, controller);
 
         Vector3 movement = new Vector3(axisX, 0, 0);
 
         rigidBody.AddForce(movement * movementSpeed);
-        Debug.Log(rigidBody.velocity.magnitude);
+
         Vector3 velocity = rigidBody.velocity;
-        if(velocity.x > maxSpeed)
+        if (velocity.x > maxSpeed)
         {
             velocity.x = maxSpeed;
         }
-        if(velocity.x < -maxSpeed)
+
+        if (velocity.x < -maxSpeed)
         {
             velocity.x = -maxSpeed;
         }
+
         rigidBody.velocity = velocity;
 
         if (XCI.GetButtonDown(XboxButton.A, controller) && isGrounded)
         //if the "a" button is pressed you can jump as long as you are grounded
         {
-            rigidBody.AddForce(new Vector3(0, jump, 0));
+            rigidBody.AddForce(new Vector3(0, jumpPower, 0));
         }
+        else if (XCI.GetButton(XboxButton.A, controller) && !isGrounded)
+        {
+            boostTimer -= Time.deltaTime;
+
+            if (boostTimer > 0)
+            {
+                rigidBody.AddForce(new Vector3(0, boostForce, 0));
+            }
+        }
+
+        if (isGrounded)
+        {
+            boostTimer = boostDuration;
+        }
+
+        if (axisX > 0 && !facingRight)
+            Flip();
+        else if (axisX < 0 && facingRight)
+            Flip();
     }
     void CheckIfPlayerIsAlive()
     {
-        if(energy <= 0)
+        if (playerEnergy <= 0)
         {
             Destroy(this.gameObject);
         }
     }
+    void Flip()
+    {
+        facingRight = !facingRight;
+        transform.Rotate(0, 180, 0);
+    }
+
     void FixedUpdate()
     {
         MovePlayer();
         PlayerPunch();
-        CheckIfPlayerIsAlive(); 
+        CheckIfPlayerIsAlive();
     }
-}
 
+}
