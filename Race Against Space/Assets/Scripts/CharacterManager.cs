@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class CharacterManager : MonoBehaviour {
-    private List<GameObject> characters;
+    public List<GameObject> characters;
     //default index of the model
     private int selectionIndex = 0;
     private int i = 0;
@@ -12,7 +12,7 @@ public class CharacterManager : MonoBehaviour {
     static int playersActive; 
     // Use this for initialization
 
-    static bool[] isPlaying = new bool[4];//has a bool playing function so it will load only active players
+    public static bool[] isPlaying = new bool[4];//has a bool playing function so it will load only active players
 
 	void Start () {
         playersActive = 0; 
@@ -22,8 +22,6 @@ public class CharacterManager : MonoBehaviour {
             characters.Add(t.gameObject);//adds all the players to the array of characters 
             t.gameObject.SetActive(false);
         }
-
-        //characters[selectionIndex].SetActive(true); 
 	}
 
     public void Select(int index)
