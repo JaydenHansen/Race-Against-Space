@@ -21,10 +21,10 @@ public class PlatformPhasing : MonoBehaviour
         Physics.IgnoreCollision(playerCollider, platformAbove, true);
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        Physics.IgnoreCollision(playerCollider, platformAbove, false);
-
-        platformAbove = null;
-    }
+   private void OnTriggerExit(Collider other)
+   {
+       Physics.IgnoreCollision(playerCollider, platformAbove, false);
+   
+       platformAbove = null;
+   }
 }

@@ -16,7 +16,10 @@ public class PlayerController : MonoBehaviour
 
     public float movementSpeed = 20.0f;
     public float maxSpeed = 20.0f;
-    public float jumpPower = 800.0f;
+    public float jumpPower = 12.5f;
+
+    public float fallMultiplier = 2.5f;
+    public float lowJumpMultiplier = 2.0f;
 
     public bool isGrounded;
     public float jumpRayLength = 2.0f;
@@ -27,14 +30,14 @@ public class PlayerController : MonoBehaviour
     public float horizPunchPower = 100f;
     public float vertPunchPower = 100f;
 
-    public float boostDuration = 2.0f;
-    private float boostTimer;
-    public float boostForce = 100f;
+    // public float boostDuration = 2.0f;
+    // private float boostTimer;
+    // public float boostForce = 100f;
 
     public bool paused = false;
     public GameObject controlsMenu;
 
-    void Start()
+    void Awake()
     {
         //gets the rigidbody of the player
         rigidBody = GetComponent<Rigidbody>();
@@ -111,22 +114,32 @@ public class PlayerController : MonoBehaviour
         if (XCI.GetButtonDown(XboxButton.A, controller) && isGrounded)
         //if the "a" button is pressed you can jump as long as you are grounded
         {
-            rigidBody.AddForce(new Vector3(0, jumpPower, 0));
-        }
-        else if (XCI.GetButton(XboxButton.A, controller) && !isGrounded)
-        {
-            boostTimer -= Time.deltaTime;
-
-            if (boostTimer > 0)
-            {
-                rigidBody.AddForce(new Vector3(0, boostForce, 0));
-            }
+            rigidBody.velocity = Vector2.up * jumpPower;
         }
 
-        if (isGrounded)
+        if (rigidBody.velocity.y < 0)
         {
-            boostTimer = boostDuration;
+            rigidBody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
         }
+        else if (rigidBody.velocity.y > 0 && !XCI.GetButton(XboxButton.A, controller))
+        {
+            rigidBody.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
+        }
+
+        // else if (XCI.GetButton(XboxButton.A, controller) && !isGrounded)
+        // {
+        //     boostTimer -= Time.deltaTime;
+        // 
+        //     if (boostTimer > 0)
+        //     {
+        //         rigidBody.AddForce(new Vector3(0, boostForce, 0));
+        //     }
+        // }
+        // 
+        // if (isGrounded)
+        // {
+        //     boostTimer = boostDuration;
+        // }
 
         if (axisX > 0 && !facingRight)
             Flip();
