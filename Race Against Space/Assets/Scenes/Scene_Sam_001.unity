@@ -1380,20 +1380,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b615e5cb0a4924785b1c7e3aa151cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  facingRight: 1
   rigidBody: {fileID: 0}
   otherPlayer: {fileID: 0}
   controller: 3
-  controlsMenu: {fileID: 1368586955}
+  playerEnergy: 100
   movementSpeed: 10
   maxSpeed: 8
-  jump: 125
-  energy: 100
+  jumpPower: 800
   isGrounded: 0
-  paused: 0
-  lengthOfRaycast: 2
+  jumpRayLength: 2
   canPunch: 0
-  punchLeft: {x: -100, y: 100, z: 0}
-  punchRight: {x: 100, y: 100, z: 0}
+  punchRayLength: 2
+  horizPunchPower: 100
+  vertPunchPower: 100
+  boostDuration: 2
+  boostForce: 100
+  paused: 0
+  controlsMenu: {fileID: 1368586955}
 --- !u!54 &524332979
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2441,20 +2445,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b615e5cb0a4924785b1c7e3aa151cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  facingRight: 1
   rigidBody: {fileID: 0}
   otherPlayer: {fileID: 0}
   controller: 4
-  controlsMenu: {fileID: 1368586955}
+  playerEnergy: 100
   movementSpeed: 10
   maxSpeed: 8
-  jump: 125
-  energy: 100
+  jumpPower: 800
   isGrounded: 0
-  paused: 0
-  lengthOfRaycast: 2
+  jumpRayLength: 2
   canPunch: 0
-  punchLeft: {x: -100, y: 100, z: 0}
-  punchRight: {x: 100, y: 100, z: 0}
+  punchRayLength: 2
+  horizPunchPower: 100
+  vertPunchPower: 100
+  boostDuration: 2
+  boostForce: 100
+  paused: 0
+  controlsMenu: {fileID: 1368586955}
 --- !u!54 &896764031
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3249,20 +3257,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b615e5cb0a4924785b1c7e3aa151cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  facingRight: 1
   rigidBody: {fileID: 0}
   otherPlayer: {fileID: 0}
   controller: 2
-  controlsMenu: {fileID: 1368586955}
+  playerEnergy: 100
   movementSpeed: 10
   maxSpeed: 8
-  jump: 125
-  energy: 100
+  jumpPower: 800
   isGrounded: 0
-  paused: 0
-  lengthOfRaycast: 2
+  jumpRayLength: 2
   canPunch: 0
-  punchLeft: {x: -100, y: 100, z: 0}
-  punchRight: {x: 100, y: 100, z: 0}
+  punchRayLength: 2
+  horizPunchPower: 100
+  vertPunchPower: 100
+  boostDuration: 2
+  boostForce: 100
+  paused: 0
+  controlsMenu: {fileID: 1368586955}
 --- !u!54 &1238582469
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4208,20 +4220,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b615e5cb0a4924785b1c7e3aa151cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  facingRight: 1
   rigidBody: {fileID: 0}
   otherPlayer: {fileID: 0}
   controller: 1
-  controlsMenu: {fileID: 1368586955}
+  playerEnergy: 100
   movementSpeed: 10
   maxSpeed: 8
-  jump: 125
-  energy: 100
+  jumpPower: 800
   isGrounded: 0
-  paused: 0
-  lengthOfRaycast: 2
+  jumpRayLength: 2
   canPunch: 0
-  punchLeft: {x: -100, y: 100, z: 0}
-  punchRight: {x: 100, y: 100, z: 0}
+  punchRayLength: 2
+  horizPunchPower: 100
+  vertPunchPower: 100
+  boostDuration: 2
+  boostForce: 100
+  paused: 0
+  controlsMenu: {fileID: 1368586955}
 --- !u!54 &1452248111
 Rigidbody:
   m_ObjectHideFlags: 0
