@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using XboxCtrlrInput;
 
 public class CharacterManager : MonoBehaviour {
     public List<GameObject> characters;
@@ -9,7 +10,8 @@ public class CharacterManager : MonoBehaviour {
     private int selectionIndex = 0;
     private int i = 0;
     public bool isMain;
-    static int playersActive; 
+    static int playersActive;
+    public XboxController controller;
     // Use this for initialization
 
     public static bool[] isPlaying = new bool[4];//has a bool playing function so it will load only active players
@@ -45,6 +47,10 @@ public class CharacterManager : MonoBehaviour {
     {
         //selects players based on keys, will need to be changed when access to four controllers is granted
         if (Input.GetKeyDown(KeyCode.A))
+        {
+            Select(0);
+        }
+        if (XCI.GetButton(XboxButton.Start, controller) )
         {
             Select(0);
         }
