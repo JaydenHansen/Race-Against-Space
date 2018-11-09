@@ -392,7 +392,6 @@ GameObject:
   - component: {fileID: 651563236}
   - component: {fileID: 651563235}
   - component: {fileID: 651563239}
-  - component: {fileID: 651563238}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Untagged
@@ -467,19 +466,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 651563233}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &651563238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 651563233}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d07fa75b13dc9cc4484d4142df534668, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: 2
-  charMan: {fileID: 28028775}
 --- !u!54 &651563239
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -593,7 +579,6 @@ GameObject:
   - component: {fileID: 1333800667}
   - component: {fileID: 1333800666}
   - component: {fileID: 1333800670}
-  - component: {fileID: 1333800669}
   m_Layer: 0
   m_Name: Player3
   m_TagString: Untagged
@@ -668,19 +653,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1333800664}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1333800669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1333800664}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d07fa75b13dc9cc4484d4142df534668, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: 3
-  charMan: {fileID: 28028775}
 --- !u!54 &1333800670
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -708,7 +680,6 @@ GameObject:
   - component: {fileID: 1879598526}
   - component: {fileID: 1879598525}
   - component: {fileID: 1879598529}
-  - component: {fileID: 1879598528}
   m_Layer: 0
   m_Name: Player4
   m_TagString: Untagged
@@ -783,19 +754,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1879598523}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1879598528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1879598523}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d07fa75b13dc9cc4484d4142df534668, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: 4
-  charMan: {fileID: 28028775}
 --- !u!54 &1879598529
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -823,7 +781,6 @@ GameObject:
   - component: {fileID: 2061124572}
   - component: {fileID: 2061124571}
   - component: {fileID: 2061124575}
-  - component: {fileID: 2061124574}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -898,19 +855,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2061124569}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2061124574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2061124569}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d07fa75b13dc9cc4484d4142df534668, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controller: 1
-  charMan: {fileID: 28028775}
 --- !u!54 &2061124575
 Rigidbody:
   m_ObjectHideFlags: 0
