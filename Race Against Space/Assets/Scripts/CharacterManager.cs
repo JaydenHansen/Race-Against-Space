@@ -11,7 +11,10 @@ public class CharacterManager : MonoBehaviour {
     private int i = 0;
     public bool isMain;
     static int playersActive;
-    public XboxController controller;
+    public XboxController controller1;
+    public XboxController controller2;
+    public XboxController controller3;
+    public XboxController controller4;
     // Use this for initialization
 
     public static bool[] isPlaying = new bool[4];//has a bool playing function so it will load only active players
@@ -62,35 +65,24 @@ public class CharacterManager : MonoBehaviour {
         //{
         //    Select(3);
         //}
-        if (controller == XboxController.First)
+        if (XCI.GetButtonDown(XboxButton.A, controller1))
         {
-            if (XCI.GetButton(XboxButton.Start))
-            {
-                Select(0);
-            }
+            Select(0);
         }
-        if (controller == XboxController.Second)
+        if (XCI.GetButtonDown(XboxButton.A, controller2))
         {
-            if (XCI.GetButton(XboxButton.Start))
-            {
-                Select(1);
-            }
+            Select(1);
         }
-        if (controller == XboxController.Third)
+        if (XCI.GetButtonDown(XboxButton.A, controller3))
         {
-            if (XCI.GetButton(XboxButton.Start))
-            {
-                Select(2);
-            }
+            Select(2);
         }
-        if (controller == XboxController.Fourth)
+        if (XCI.GetButtonDown(XboxButton.A, controller4))
         {
-            if (XCI.GetButton(XboxButton.Start))
-            {
-                Select(3);
-            }
+            Select(3);
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && playersActive > 1)
+        //if (Input.GetKeyDown(KeyCode.Escape) && playersActive > 1)
+        if(XCI.GetButtonDown(XboxButton.Start) && (playersActive > 1))
         {//loads next scene when ready
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
