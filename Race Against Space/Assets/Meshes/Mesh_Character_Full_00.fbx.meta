@@ -1,0 +1,251 @@
+fileFormatVersion: 2
+guid: 1014344dd22420b4d9846e7475571435
+timeCreated: 1541721273
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Ankle_L
+    100002: Ankle_R
+    100004: Boots_Low_L
+    100006: Boots_Low_R
+    100008: Cat_Helmet_Low
+    100010: Clavicle_L
+    100012: Clavicle_R
+    100014: Crab_Helmet_Low
+    100016: Ctrl_Arm_L_1
+    100018: Ctrl_Arm_L_2
+    100020: Ctrl_Arm_L_3
+    100022: Ctrl_Arm_L_4
+    100024: Ctrl_Arm_R_1
+    100026: Ctrl_Arm_R_2
+    100028: Ctrl_Arm_R_3
+    100030: Ctrl_Arm_R_4
+    100032: Ctrl_Foot_L
+    100034: Ctrl_Foot_R
+    100036: Ctrl_Head
+    100038: Ctrl_Hips
+    100040: Ctrl_Knee_L
+    100042: Ctrl_Knee_R
+    100044: Ctrl_Main
+    100046: Ctrl_Neck
+    100048: Ctrl_Spine
+    100050: Ctrl_Spine__02
+    100052: Ctrl_Spine__03
+    100054: Elbow_L
+    100056: Elbow_R
+    100058: Foot_L
+    100060: Foot_R
+    100062: Gloves_Low_L
+    100064: Gloves_Low_R
+    100066: Grp_Arm_L_1
+    100068: Grp_Arm_L_2
+    100070: Grp_Arm_L_3
+    100072: Grp_Arm_L_4
+    100074: Grp_Arm_R_1
+    100076: Grp_Arm_R_2
+    100078: Grp_Arm_R_3
+    100080: Grp_Arm_R_4
+    100082: Grp_Head
+    100084: Grp_Hips
+    100086: Grp_Neck
+    100088: Grp_Spine
+    100090: Grp_Spine_02
+    100092: Grp_Spine_03
+    100094: Handle_L
+    100096: Handle_L 1
+    100098: Handle_R
+    100100: Head
+    100102: Head_Antenna
+    100104: Helmet_Generic_Low
+    100106: Hip_L
+    100108: Hip_R
+    100110: Knee_L
+    100112: Knee_L 1
+    100114: Knee_R
+    100116: Knee_R 1
+    100118: Main
+    100120: Mesh_Character_Body_01
+    100122: //RootNode
+    100124: Neck
+    100126: Shoulder_L
+    100128: Shoulder_R
+    100130: Spine_Lower
+    100132: Spine_Upper
+    100134: Waist
+    100136: Wrist_L
+    100138: Wrist_R
+    400000: Ankle_L
+    400002: Ankle_R
+    400004: Boots_Low_L
+    400006: Boots_Low_R
+    400008: Cat_Helmet_Low
+    400010: Clavicle_L
+    400012: Clavicle_R
+    400014: Crab_Helmet_Low
+    400016: Ctrl_Arm_L_1
+    400018: Ctrl_Arm_L_2
+    400020: Ctrl_Arm_L_3
+    400022: Ctrl_Arm_L_4
+    400024: Ctrl_Arm_R_1
+    400026: Ctrl_Arm_R_2
+    400028: Ctrl_Arm_R_3
+    400030: Ctrl_Arm_R_4
+    400032: Ctrl_Foot_L
+    400034: Ctrl_Foot_R
+    400036: Ctrl_Head
+    400038: Ctrl_Hips
+    400040: Ctrl_Knee_L
+    400042: Ctrl_Knee_R
+    400044: Ctrl_Main
+    400046: Ctrl_Neck
+    400048: Ctrl_Spine
+    400050: Ctrl_Spine__02
+    400052: Ctrl_Spine__03
+    400054: Elbow_L
+    400056: Elbow_R
+    400058: Foot_L
+    400060: Foot_R
+    400062: Gloves_Low_L
+    400064: Gloves_Low_R
+    400066: Grp_Arm_L_1
+    400068: Grp_Arm_L_2
+    400070: Grp_Arm_L_3
+    400072: Grp_Arm_L_4
+    400074: Grp_Arm_R_1
+    400076: Grp_Arm_R_2
+    400078: Grp_Arm_R_3
+    400080: Grp_Arm_R_4
+    400082: Grp_Head
+    400084: Grp_Hips
+    400086: Grp_Neck
+    400088: Grp_Spine
+    400090: Grp_Spine_02
+    400092: Grp_Spine_03
+    400094: Handle_L
+    400096: Handle_L 1
+    400098: Handle_R
+    400100: Head
+    400102: Head_Antenna
+    400104: Helmet_Generic_Low
+    400106: Hip_L
+    400108: Hip_R
+    400110: Knee_L
+    400112: Knee_L 1
+    400114: Knee_R
+    400116: Knee_R 1
+    400118: Main
+    400120: Mesh_Character_Body_01
+    400122: //RootNode
+    400124: Neck
+    400126: Shoulder_L
+    400128: Shoulder_R
+    400130: Spine_Lower
+    400132: Spine_Upper
+    400134: Waist
+    400136: Wrist_L
+    400138: Wrist_R
+    2100000: BaseBody
+    2100002: Helmet
+    2100004: Gloves
+    2100006: Boots_PBR
+    4300000: Mesh_Character_Body_01
+    4300002: Helmet_Generic_Low
+    4300004: Crab_Helmet_Low
+    4300006: Cat_Helmet_Low
+    4300008: Head_Antenna
+    4300010: Gloves_Low_R
+    4300012: Gloves_Low_L
+    4300014: Boots_Low_R
+    4300016: Boots_Low_L
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Boots_Low_L
+    13700002: Boots_Low_R
+    13700004: Cat_Helmet_Low
+    13700006: Crab_Helmet_Low
+    13700008: Gloves_Low_L
+    13700010: Gloves_Low_R
+    13700012: Head_Antenna
+    13700014: Helmet_Generic_Low
+    13700016: Mesh_Character_Body_01
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
