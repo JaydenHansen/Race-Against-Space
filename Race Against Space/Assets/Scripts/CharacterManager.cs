@@ -46,25 +46,49 @@ public class CharacterManager : MonoBehaviour {
     public void LoadPlayer()
     {
         //selects players based on keys, will need to be changed when access to four controllers is granted
-        if (Input.GetKeyDown(KeyCode.A))
+        //if (Input.GetKeyDown(KeyCode.A))
+        //{
+        //    Select(0);
+        //}
+        //if (Input.GetKeyDown(KeyCode.S))
+        //{
+        //    Select(1);
+        //}
+        //if (Input.GetKeyDown(KeyCode.D))
+        //{
+        //    Select(2);
+        //}
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    Select(3);
+        //}
+        if (controller == XboxController.First)
         {
-            Select(0);
+            if (XCI.GetButton(XboxButton.Start))
+            {
+                Select(0);
+            }
         }
-        if (XCI.GetButton(XboxButton.Start, controller) )
+        if (controller == XboxController.Second)
         {
-            Select(0);
+            if (XCI.GetButton(XboxButton.Start))
+            {
+                Select(1);
+            }
         }
-        if (Input.GetKeyDown(KeyCode.S))
+        if (controller == XboxController.Third)
         {
-            Select(1);
+            if (XCI.GetButton(XboxButton.Start))
+            {
+                Select(2);
+            }
         }
-        if (Input.GetKeyDown(KeyCode.D))
+        if (controller == XboxController.Fourth)
         {
-            Select(2);
-        }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            Select(3);
+            if (XCI.GetButton(XboxButton.Start))
+            {
+                Select(3);
+            }
         }
         if (Input.GetKeyDown(KeyCode.Escape) && playersActive > 1)
         {//loads next scene when ready
