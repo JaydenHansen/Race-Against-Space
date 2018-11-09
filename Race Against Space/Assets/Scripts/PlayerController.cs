@@ -45,7 +45,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        
+		if (playerEnergy > 100) 
+		{
+			playerEnergy = 100; 
+		}
 
         Vector3 jumpRayDir = transform.TransformDirection(Vector3.down);
         RaycastHit jumpRayHit;
@@ -53,7 +56,7 @@ public class PlayerController : MonoBehaviour
 
         Vector3 punchRayDir = transform.TransformDirection(Vector3.forward);
         RaycastHit punchRayHit;
-        canPunch = Physics.Raycast(new Vector3(transform.position.x,(transform.position.y + 2.41f), transform.position.z), punchRayDir, out punchRayHit, punchRayLength);
+        canPunch = Physics.Raycast(new Vector3(transform.position.x,(transform.position.y + 0.845f), transform.position.z), punchRayDir, out punchRayHit, punchRayLength);
 
         otherPlayer = punchRayHit.rigidbody;
 

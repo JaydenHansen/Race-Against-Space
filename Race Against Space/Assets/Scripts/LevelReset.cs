@@ -26,7 +26,7 @@ public class LevelReset : MonoBehaviour
 
         if(listOfPlayers.Length <= 1)
         {
-            if(listOfPlayers[0].name.Equals("Mesh_Character_Bublek"))
+            if(listOfPlayers[0].name.Equals("Mesh_Character_Full_01"))
             {
                 if(ScoreManager.player1Score < 2)
                 { 
@@ -43,7 +43,7 @@ public class LevelReset : MonoBehaviour
                     SceneManager.LoadScene(1);
                 }
             }
-            else if (listOfPlayers[0].name.Equals("Mesh_Character_Gurmpt"))
+			else if (listOfPlayers[0].name.Equals("Mesh_Character_Full_01 (1)"))
             {
               if (ScoreManager.player2Score < 2)
               {
@@ -55,19 +55,46 @@ public class LevelReset : MonoBehaviour
                      timer = roundEndWaitTimer;
                  }
               }
-               else
-               {
-                   SceneManager.LoadScene(1);
-               }
-            }
+              else
+              {
+                  SceneManager.LoadScene(1);
+              }
+           }
+			if(listOfPlayers[0].name.Equals("Mesh_Character_Full_01 (2)"))
+			{
+				if(ScoreManager.player3Score < 2)
+				{ 
+					timer -= Time.deltaTime;
+					if (timer <= 0)
+					{
+						ScoreManager.player3Score++;
+						SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+						timer = roundEndWaitTimer;
+					}
+				}
+				else
+				{
+					SceneManager.LoadScene(1);
+				}
+			}
+			if(listOfPlayers[0].name.Equals("Mesh_Character_Full_01 (3)"))
+			{
+				if(ScoreManager.player4Score < 2)
+				{ 
+					timer -= Time.deltaTime;
+					if (timer <= 0)
+					{
+						ScoreManager.player4Score++;
+						SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+						timer = roundEndWaitTimer;
+					}
+				}
+				else
+				{
+					SceneManager.LoadScene(1);
+				}
+			}
 
-           
-
-            if (timer <= 0)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-                timer = roundEndWaitTimer;
-            }
         }
     }
 }

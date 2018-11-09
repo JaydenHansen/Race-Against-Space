@@ -32,10 +32,6 @@ public class energyReduce : MonoBehaviour {
             Destroy(energyBar);
             Destroy(playerIcon);
         }
-		if (energyBar.value > 100) 
-		{
-			energyBar.value = 100; 
-		}
         
         if (!playerMove.gameObject.activeInHierarchy)
         {
