@@ -3,63 +3,71 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelReset : MonoBehaviour {
+public class LevelReset : MonoBehaviour
+{ 
+    public GameObject[] listOfPlayers;
 
-    //public PlayerController player1;
-    //public PlayerController player2;
-    //public PlayerController player3;
-    //public PlayerController player420;
-    public int survivors;
-    //private List<PlayerController> players;
-    public CharacterManager charMan;
+    public float roundEndWaitTimer = 3f;
+    private float timer;
 
     // Use this for initialization
-    void Start ()
+    void Awake()
     {
-        //// check how many players are in the game
+        listOfPlayers = GameObject.FindGameObjectsWithTag("Player");
+        timer = roundEndWaitTimer;
+    }
 
-        //for (int i = 0; i < players.Count; i++)
-        //{
-        //    if (players[i].energy > 0)
-        //    {
-                
-        //    }
-        //}
+    // Update is called once per frame  
+    void Update()
+    { 
+        Debug.Log(ScoreManager.player1Score);
 
+        listOfPlayers = GameObject.FindGameObjectsWithTag("Player");
 
-        
-	}
-	
-	// Update is called once per frame  
-	void Update ()
-    {
-        for (int i = 0; i < 4; i++)
+        if(listOfPlayers.Length <= 1)
         {
-            if (CharacterManager.isPlaying[i])
+            if(listOfPlayers[0].name.Equals("Mesh_Character_Bublek"))
             {
-                if(charMan.characters[i].GetComponent<PlayerController>().playerEnergy > 0)
+                if(ScoreManager.player1Score < 2)
+                { 
+                    timer -= Time.deltaTime;
+                    if (timer <= 0)
+                    {
+                        ScoreManager.player1Score++;
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                        timer = roundEndWaitTimer;
+                    }
+                }
+                else
                 {
-                    survivors++;
+                    SceneManager.LoadScene(1);
                 }
             }
-        }
-        //// check how many players are alive
-        //if (energy > 0) //check if alive 
-        //{
-        //    PlayerControls.active;
-        //   if(survivors <= 1)
-        //   {
-        //        for (int i = 1; i > survivors; i++)
-        //            {
+            else if (listOfPlayers[0].name.Equals("Mesh_Character_Gurmpt"))
+            {
+              if (ScoreManager.player2Score < 2)
+              {
+                 timer -= Time.deltaTime;
+                 if (timer <= 0)
+                 {
+                     ScoreManager.player2Score++;
+                     SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                     timer = roundEndWaitTimer;
+                 }
+              }
+               else
+               {
+                   SceneManager.LoadScene(1);
+               }
+            }
 
-        //            }
-        //   }
-        //}
+           
 
-        if (survivors <= 1)
-        {
-
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            if (timer <= 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                timer = roundEndWaitTimer;
+            }
         }
     }
 }

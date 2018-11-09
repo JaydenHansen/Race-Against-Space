@@ -45,13 +45,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        
+
         Vector3 jumpRayDir = transform.TransformDirection(Vector3.down);
         RaycastHit jumpRayHit;
         isGrounded = Physics.Raycast(transform.position, jumpRayDir, out jumpRayHit, jumpRayLength);
 
         Vector3 punchRayDir = transform.TransformDirection(Vector3.forward);
         RaycastHit punchRayHit;
-        canPunch = Physics.Raycast(transform.position, punchRayDir, out punchRayHit, punchRayLength);
+        canPunch = Physics.Raycast(new Vector3(transform.position.x,(transform.position.y + 2.41f), transform.position.z), punchRayDir, out punchRayHit, punchRayLength);
 
         otherPlayer = punchRayHit.rigidbody;
 
