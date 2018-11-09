@@ -81,8 +81,8 @@ public class CharacterManager : MonoBehaviour {
         {
             Select(3);
         }
-       // if (Input.GetKeyDown(KeyCode.Space) && playersActive > 1)
-        if(XCI.GetButtonDown(XboxButton.Start) && (playersActive > 1))
+        if (Input.GetKeyDown(KeyCode.Space) && playersActive > 1)
+       // if(XCI.GetButtonDown(XboxButton.Start) && (playersActive > 1))
         {//loads next scene when ready
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
