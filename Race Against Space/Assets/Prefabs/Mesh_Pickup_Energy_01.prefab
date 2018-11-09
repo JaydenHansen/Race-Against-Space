@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 114216880363555292}
   m_Layer: 0
   m_Name: Mesh_Pickup_Energy_01
-  m_TagString: Untagged
+  m_TagString: energyReplenish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,7 +87,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a5c68ea1d4e17184dbd0f753649080af, type: 3}
+  - {fileID: 2100002, guid: a5c68ea1d4e17184dbd0f753649080af, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

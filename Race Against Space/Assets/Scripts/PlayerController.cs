@@ -55,6 +55,8 @@ public class PlayerController : MonoBehaviour
 
         otherPlayer = punchRayHit.rigidbody;
 
+		MovePlayer();
+
         PauseGame();
     }
     void PauseGame()
@@ -161,7 +163,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        MovePlayer();
+       
         PlayerPunch();
         CheckIfPlayerIsAlive();
     }
