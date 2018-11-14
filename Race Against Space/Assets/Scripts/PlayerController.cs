@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public XboxController controller;
 
     public float playerEnergy = 100.0f;
+    public float energyDecrease = 1.6f; 
 
     public float movementSpeed = 20.0f;
     public float maxSpeed = 20.0f;
@@ -97,7 +98,7 @@ public class PlayerController : MonoBehaviour
 
     private void MovePlayer()
     {
-        playerEnergy -= Time.deltaTime * 1.6f;
+        playerEnergy -= Time.deltaTime * energyDecrease;
         //makes the energy decrease over time
         float axisX = XCI.GetAxis(XboxAxis.LeftStickX, controller);
 
