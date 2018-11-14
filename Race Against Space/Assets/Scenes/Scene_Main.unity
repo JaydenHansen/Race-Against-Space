@@ -2422,7 +2422,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   listOfPlayers: []
-  roundEndWaitTimer: 3
+  endSceneIndex: 1
+  timer: 0.25
+  slowTime: 0.35
+  hasSlowed: 0
 --- !u!4 &866057592
 Transform:
   m_ObjectHideFlags: 0
@@ -5584,7 +5587,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1968852029}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb4fb1a0eabb7974cb14a3048a264858, type: 3}
+  m_Script: {fileID: 11500000, guid: ac7aa69cf8eb3af4b95bacef8861ec51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1968852031

@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelReset : MonoBehaviour
 {
     public GameObject[] listOfPlayers;
-   // public GameObject roundWinPlayer = null;
+    public GameObject roundWinPlayer = null;
 
     public int endSceneIndex = 1;
 
@@ -28,6 +28,7 @@ public class LevelReset : MonoBehaviour
     {
         listOfPlayers = GameObject.FindGameObjectsWithTag("Player");
 
+        // *THIS NEEDS WORK*
         if (listOfPlayers.Length <= 1)
         {
             AddRoundTally();
@@ -48,7 +49,7 @@ public class LevelReset : MonoBehaviour
 
         if (countdown <= 0)
         { 
-            if (listOfPlayers[0].name.Equals("Mesh_Character_Full_01"))
+            if (roundWinPlayer.name.Equals("Mesh_Character_Full_01"))
             {
                 if (ScoreManager.player1Score < 2)
                 {
@@ -63,7 +64,7 @@ public class LevelReset : MonoBehaviour
                     ScoreReset();
                 }
             }
-            else if (listOfPlayers[0].name.Equals("Mesh_Character_Full_01 (1)"))
+            else if (roundWinPlayer.name.Equals("Mesh_Character_Full_01 (1)"))
             {
                 if (ScoreManager.player2Score < 2)
                 {
@@ -78,7 +79,7 @@ public class LevelReset : MonoBehaviour
                     ScoreReset();
                 }
             }
-            else if (listOfPlayers[0].name.Equals("Mesh_Character_Full_01 (2)"))
+            else if (roundWinPlayer.name.Equals("Mesh_Character_Full_01 (2)"))
             {
                 if (ScoreManager.player3Score < 2)
                 {
@@ -93,7 +94,7 @@ public class LevelReset : MonoBehaviour
                     ScoreReset();
                 }
             }
-            else if (listOfPlayers[0].name.Equals("Mesh_Character_Full_01 (3)"))
+            else if (roundWinPlayer.name.Equals("Mesh_Character_Full_01 (3)"))
             {
                 if (ScoreManager.player4Score < 2)
                 {
