@@ -2757,6 +2757,11 @@ MonoBehaviour:
   chunkPrefabs:
   - {fileID: 1677144747747770, guid: 34f59db0d21b38640b89a7d04699d85d, type: 2}
   - {fileID: 1932866917225174, guid: 5d2bb0b438e6e6a42b68b43883f231a0, type: 2}
+  - {fileID: 1642569602177976, guid: 2db91c990dff0bb49817c43703116af7, type: 2}
+  - {fileID: 1010583336019230, guid: 4fc15bf4e6cff5e46be7685d6ce6bea9, type: 2}
+  - {fileID: 1906537775226818, guid: e48228d83e5fa9e46b7bbf00c160b3f4, type: 2}
+  - {fileID: 1841851165490192, guid: 1e6ec1042a4cb6847ae5bdf706e1d4b7, type: 2}
+  - {fileID: 1983748957598166, guid: aee788855ab0c4747844379b11674e87, type: 2}
   selectedChunk: {fileID: 0}
   heightMarker: {fileID: 0}
   numOfPlatformsRemaining: 30
