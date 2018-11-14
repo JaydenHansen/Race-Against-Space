@@ -28,7 +28,11 @@ public class LevelReset : MonoBehaviour
     {
         listOfPlayers = GameObject.FindGameObjectsWithTag("Player");
 
-        // *THIS NEEDS WORK*
+        if (listOfPlayers.Length <= 1 && roundWinPlayer == null)
+        {
+            roundWinPlayer = listOfPlayers[0];
+        }
+
         if (listOfPlayers.Length <= 1)
         {
             AddRoundTally();
