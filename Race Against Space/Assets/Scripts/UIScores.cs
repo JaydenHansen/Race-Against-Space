@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using XboxCtrlrInput;
 
 public class UIScores : MonoBehaviour
 {
@@ -23,6 +25,8 @@ public class UIScores : MonoBehaviour
     public GameObject player4Point2;
     public GameObject player4Point3;
     public GameObject player4WinScreen;
+
+    private bool gameOver = false; 
     
     private void Update()
     {
@@ -30,6 +34,18 @@ public class UIScores : MonoBehaviour
         checkPlayer2Score();
         checkPlayer3Score();
         checkPlayer4Score();
+    }
+
+    private void checkGameOver()
+    {
+        if (gameOver)
+        {
+            Time.timeScale = 0;
+            if (XCI.GetButtonDown(XboxButton.Start))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            }
+        }
     }
     private void checkPlayer1Score()
     {
@@ -60,6 +76,7 @@ public class UIScores : MonoBehaviour
             player1Point2.SetActive(true);
             player1Point3.SetActive(true);
             player1WinScreen.SetActive(true);
+            gameOver = true;
         }
     }
     private void checkPlayer2Score()
@@ -91,6 +108,7 @@ public class UIScores : MonoBehaviour
             player2Point2.SetActive(true);
             player2Point3.SetActive(true);
             player2WinScreen.SetActive(true);
+            gameOver = true;
         }
     }
     private void checkPlayer3Score()
@@ -122,6 +140,7 @@ public class UIScores : MonoBehaviour
             player3Point2.SetActive(true);
             player3Point3.SetActive(true);
             player3WinScreen.SetActive(true);
+            gameOver = true;
         }
     }
     private void checkPlayer4Score()
@@ -153,6 +172,8 @@ public class UIScores : MonoBehaviour
             player4Point2.SetActive(true);
             player4Point3.SetActive(true);
             player4WinScreen.SetActive(true);
+            gameOver = true;
+
         }
     }
 }

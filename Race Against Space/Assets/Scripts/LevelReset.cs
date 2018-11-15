@@ -66,8 +66,8 @@ public class LevelReset : MonoBehaviour
                 }
                 else
                 {
-                    SceneManager.LoadScene(endSceneIndex);
-                    Time.timeScale = 1;
+                    //SceneManager.LoadScene(endSceneIndex);
+                    //Time.timeScale = 1;
                     ScoreReset();
                 }
             }
@@ -81,8 +81,8 @@ public class LevelReset : MonoBehaviour
                 }
                 else
                 {
-                    SceneManager.LoadScene(endSceneIndex);
-                    Time.timeScale = 1;
+                    //SceneManager.LoadScene(endSceneIndex);
+                    //Time.timeScale = 1;
                     ScoreReset();
                 }
             }
@@ -96,8 +96,8 @@ public class LevelReset : MonoBehaviour
                 }
                 else
                 {
-                    SceneManager.LoadScene(endSceneIndex);
-                    Time.timeScale = 1;
+                    //SceneManager.LoadScene(endSceneIndex);
+                    //Time.timeScale = 1;
                     ScoreReset();
                 }
             }
@@ -111,8 +111,8 @@ public class LevelReset : MonoBehaviour
                 }
                 else
                 {
-                    SceneManager.LoadScene(endSceneIndex);
-                    Time.timeScale = 1;
+                    //SceneManager.LoadScene(endSceneIndex);
+                    //Time.timeScale = 1;
                     ScoreReset();
                 }
             }
