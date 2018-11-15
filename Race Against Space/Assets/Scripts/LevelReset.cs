@@ -9,6 +9,8 @@ public class LevelReset : MonoBehaviour
     public GameObject roundWinPlayer = null;
     public GameObject lastPlayerAlive;
 
+	public GameObject player1WinScreen; 
+
     public int endSceneIndex = 1;
 
     public float timer = 1.0f;
@@ -66,9 +68,11 @@ public class LevelReset : MonoBehaviour
                 }
                 else
                 {
+					ScoreManager.player1Score++;
                     //SceneManager.LoadScene(endSceneIndex);
                     //Time.timeScale = 1;
-                    ScoreReset();
+                    //ScoreReset();
+					//player1WinScreen.SetActive(true);
                 }
             }
             else if (roundWinPlayer.name.Equals("Mesh_Character_Full_01 (1)"))
@@ -81,9 +85,10 @@ public class LevelReset : MonoBehaviour
                 }
                 else
                 {
-                    //SceneManager.LoadScene(endSceneIndex);
-                    //Time.timeScale = 1;
+                    SceneManager.LoadScene(endSceneIndex);
+                    Time.timeScale = 1;
                     ScoreReset();
+
                 }
             }
             else if (roundWinPlayer.name.Equals("Mesh_Character_Full_01 (2)"))
@@ -96,8 +101,8 @@ public class LevelReset : MonoBehaviour
                 }
                 else
                 {
-                    //SceneManager.LoadScene(endSceneIndex);
-                    //Time.timeScale = 1;
+                    SceneManager.LoadScene(endSceneIndex);
+                    Time.timeScale = 1;
                     ScoreReset();
                 }
             }
@@ -111,8 +116,8 @@ public class LevelReset : MonoBehaviour
                 }
                 else
                 {
-                    //SceneManager.LoadScene(endSceneIndex);
-                    //Time.timeScale = 1;
+                    SceneManager.LoadScene(endSceneIndex);
+                    Time.timeScale = 1;
                     ScoreReset();
                 }
             }
