@@ -85,9 +85,10 @@ public class LevelReset : MonoBehaviour
                 }
                 else
                 {
-                    SceneManager.LoadScene(endSceneIndex);
-                    Time.timeScale = 1;
-                    ScoreReset();
+                    ScoreManager.player2Score++;
+                    //SceneManager.LoadScene(endSceneIndex);
+                    //Time.timeScale = 1;
+                    //ScoreReset();
 
                 }
             }
@@ -101,9 +102,10 @@ public class LevelReset : MonoBehaviour
                 }
                 else
                 {
-                    SceneManager.LoadScene(endSceneIndex);
-                    Time.timeScale = 1;
-                    ScoreReset();
+                    ScoreManager.player3Score++;
+                    //SceneManager.LoadScene(endSceneIndex);
+                    //Time.timeScale = 1;
+                    //ScoreReset();
                 }
             }
             else if (roundWinPlayer.name.Equals("Mesh_Character_Full_01 (3)"))
@@ -116,13 +118,13 @@ public class LevelReset : MonoBehaviour
                 }
                 else
                 {
-                    SceneManager.LoadScene(endSceneIndex);
-                    Time.timeScale = 1;
-                    ScoreReset();
+                    ScoreManager.player4Score++;
+                    //SceneManager.LoadScene(endSceneIndex);
+                    //Time.timeScale = 1;
+                    //ScoreReset();
                 }
             }
         }
-     
     }
 
     void ScoreReset()

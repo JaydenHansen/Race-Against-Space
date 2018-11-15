@@ -6,6 +6,11 @@ using XboxCtrlrInput;
 
 public class UIScores : MonoBehaviour
 {
+    public GameObject player1;
+    public GameObject player2;
+    public GameObject player3;
+    public GameObject player4;
+
     public GameObject player1Point1;
     public GameObject player1Point2;
     public GameObject player1Point3;
@@ -42,10 +47,7 @@ public class UIScores : MonoBehaviour
         if (gameOver)
         {
             Time.timeScale = 0;
-            if (XCI.GetButtonDown(XboxButton.Start))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-            }
+
         }
     }
     private void checkPlayer1Score()
@@ -77,6 +79,7 @@ public class UIScores : MonoBehaviour
             player1Point2.SetActive(true);
             player1Point3.SetActive(true);
             player1WinScreen.SetActive(true);
+            player1.GetComponent<PlayerController>().enabled = false;
             gameOver = true;
         }
     }
@@ -109,6 +112,7 @@ public class UIScores : MonoBehaviour
             player2Point2.SetActive(true);
             player2Point3.SetActive(true);
             player2WinScreen.SetActive(true);
+            player2.GetComponent<PlayerController>().enabled = false;
             gameOver = true;
         }
     }
@@ -141,6 +145,7 @@ public class UIScores : MonoBehaviour
             player3Point2.SetActive(true);
             player3Point3.SetActive(true);
             player3WinScreen.SetActive(true);
+            player3.GetComponent<PlayerController>().enabled = false;
             gameOver = true;
         }
     }
@@ -173,8 +178,8 @@ public class UIScores : MonoBehaviour
             player4Point2.SetActive(true);
             player4Point3.SetActive(true);
             player4WinScreen.SetActive(true);
+            player4.GetComponent<PlayerController>().enabled = false;
             gameOver = true;
-
         }
     }
 }
