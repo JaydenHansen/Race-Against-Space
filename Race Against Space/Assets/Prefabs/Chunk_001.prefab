@@ -1992,7 +1992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517690aa0c76e144ba8104bf44c88912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformMoveSpeed: 2
+  platformMoveSpeed: 1
   gameObjectDeleteY: -200
 --- !u!114 &114485781827009888
 MonoBehaviour:
