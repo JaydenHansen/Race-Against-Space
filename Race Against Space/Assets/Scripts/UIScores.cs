@@ -34,6 +34,7 @@ public class UIScores : MonoBehaviour
         checkPlayer2Score();
         checkPlayer3Score();
         checkPlayer4Score();
+        checkGameOver();
     }
 
     private void checkGameOver()
