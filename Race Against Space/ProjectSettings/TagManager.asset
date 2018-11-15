@@ -8,6 +8,7 @@ TagManager:
   - Platforms
   - HeightMarker
   - energyReplenish
+  - Blackhole
   layers:
   - Default
   - TransparentFX

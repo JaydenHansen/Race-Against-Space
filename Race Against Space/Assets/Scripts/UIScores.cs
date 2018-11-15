@@ -47,7 +47,11 @@ public class UIScores : MonoBehaviour
         if (gameOver)
         {
             Time.timeScale = 0;
-
+			if (XCI.GetButton(XboxButton.Start)) 
+			{
+				Time.timeScale = 1; 
+				SceneManager.LoadScene (0);
+			}
         }
     }
     private void checkPlayer1Score()
