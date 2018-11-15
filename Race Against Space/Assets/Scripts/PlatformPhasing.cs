@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlatformPhasing : MonoBehaviour
 {
+    public Rigidbody playerRB;
 
     public Collider playerCollider;
     public Collider platformAbove;
@@ -11,20 +12,23 @@ public class PlatformPhasing : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        playerRB = this.gameObject.GetComponent<Rigidbody>();
         playerCollider = this.gameObject.GetComponent<Collider>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void FixedUpdate()
     {
-        platformAbove = other.gameObject.GetComponent<Collider>();
-
-        Physics.IgnoreCollision(playerCollider, platformAbove, true);
+        int overlaps = Physics.OverlapBox(transform.position + new Vector3(0, 0.83f, 0), new Vector3(0.17f, 0.83f, 0.17f), Quaternion.identity, LayerMask.GetMask("Platforms")).Length;
+        
+        // If player is traveling up (jumping) then disable
+        if(playerRB.velocity.y > 0)
+        {
+            Physics.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Platforms"), true);
+        }
+        // If player is falling and not colliding with platform then enable
+        else if (playerRB.velocity.y <= 0 && overlaps == 0) 
+        {
+            Physics.IgnoreLayerCollision(gameObject.layer, LayerMask.NameToLayer("Platforms"), false);
+        }
     }
-
-   private void OnTriggerExit(Collider other)
-   {
-       Physics.IgnoreCollision(playerCollider, platformAbove, false);
-   
-       platformAbove = null;
-   }
 }
