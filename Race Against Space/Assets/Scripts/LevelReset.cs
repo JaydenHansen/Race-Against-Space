@@ -7,6 +7,7 @@ public class LevelReset : MonoBehaviour
 {
     public GameObject[] listOfPlayers;
     public GameObject roundWinPlayer = null;
+    public GameObject lastPlayerAlive;
 
     public int endSceneIndex = 1;
 
@@ -16,9 +17,13 @@ public class LevelReset : MonoBehaviour
     public float slowTime = 0.05f;
     public bool hasSlowed = false;
 
+    public BlackholeManager blackhole;
+
     // Use this for initialization
     void Awake()
     {
+        blackhole = GameObject.FindGameObjectWithTag("Blackhole").GetComponentInChildren<BlackholeManager>();
+
         listOfPlayers = GameObject.FindGameObjectsWithTag("Player");
         countdown = timer;
     }
@@ -28,14 +33,12 @@ public class LevelReset : MonoBehaviour
     {
         listOfPlayers = GameObject.FindGameObjectsWithTag("Player");
 
-        if (listOfPlayers.Length <= 1 && roundWinPlayer == null)
-        {
-            roundWinPlayer = listOfPlayers[0];
-        }
-
         if (listOfPlayers.Length <= 1)
         {
             AddRoundTally();
+            roundWinPlayer = listOfPlayers[0];
+
+            blackhole.gameObject.SetActive(false);
         }
     }
 
