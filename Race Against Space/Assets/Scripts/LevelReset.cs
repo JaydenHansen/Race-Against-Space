@@ -117,6 +117,7 @@ public class LevelReset : MonoBehaviour
                 }
             }
         }
+     
     }
 
     void ScoreReset()

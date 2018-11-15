@@ -17,5 +17,6 @@ public class CheckPlayerActive : MonoBehaviour {
         {
             objects.gameObject.SetActive(player.gameObject.activeInHierarchy);
         }
+
     }
 }

@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
     public float horizPunchPower = 100f;
     public float vertPunchPower = 100f;
 
+    public Animator anim;
+
     // public float boostDuration = 2.0f;
     // private float boostTimer;
     // public float boostForce = 100f;
@@ -42,6 +44,8 @@ public class PlayerController : MonoBehaviour
     {
         //gets the rigidbody of the player
         rigidBody = GetComponent<Rigidbody>();
+
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -62,6 +66,7 @@ public class PlayerController : MonoBehaviour
         otherPlayer = punchRayHit.rigidbody;
 
 		MovePlayer();
+        anim.SetBool("Jump", isGrounded);
 
         PauseGame();
     }
@@ -85,7 +90,12 @@ public class PlayerController : MonoBehaviour
     {
         if (canPunch)
         {//if punch is true you are able to punch
-            if (XCI.GetButton(XboxButton.RightBumper, controller) && facingRight)
+            if (XCI.GetButton(XboxButton.RightBumper, controller))
+            {
+                anim.SetTrigger("Punch");
+                //anim.Play("Attack_01");
+            }
+                if (XCI.GetButton(XboxButton.RightBumper, controller) && facingRight)
             {//if right bumper is hit, hit the player to the right
                 otherPlayer.AddForce(new Vector3(horizPunchPower, vertPunchPower, 0));
             }
@@ -106,6 +116,17 @@ public class PlayerController : MonoBehaviour
 
         rigidBody.AddForce(movement * movementSpeed);
 
+        //if (axisX > 0 || axisX < 0)
+        //{
+        //    anim.Play("Run_01");
+        //}
+        //else if (axisX == 0)
+        //{
+        //    anim.Play("Idle");
+        //}
+
+        anim.SetFloat("Movement", movement.magnitude);
+
         Vector3 velocity = rigidBody.velocity;
         if (velocity.x > maxSpeed)
         {
@@ -119,11 +140,19 @@ public class PlayerController : MonoBehaviour
 
         rigidBody.velocity = velocity;
 
+        
+
         if (XCI.GetButtonDown(XboxButton.A, controller) && isGrounded)
         //if the "a" button is pressed you can jump as long as you are grounded
         {
             rigidBody.velocity = Vector2.up * jumpPower;
         }
+
+        // punch animation
+        //if (XCI.GetButton(XboxButton.A, controller))
+        //{
+        //    anim.Play("Launch_01");
+        //}
 
         if (rigidBody.velocity.y < 0)
         {
