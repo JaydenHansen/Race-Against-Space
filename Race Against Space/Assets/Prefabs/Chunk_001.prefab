@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 54823390552854946}
   - component: {fileID: 64804017412284650}
   - component: {fileID: 65412105878095762}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh_Platform_SheetMetal_01
   m_TagString: Platforms
   m_Icon: {fileID: 0}
@@ -1980,7 +1980,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517690aa0c76e144ba8104bf44c88912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformMoveSpeed: 1
+  platformMoveSpeed: 1.5
   gameObjectDeleteY: -200
 --- !u!114 &114655488973182068
 MonoBehaviour:

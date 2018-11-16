@@ -15,6 +15,7 @@ public class CharacterManager : MonoBehaviour {
     public XboxController controller2;
     public XboxController controller3;
     public XboxController controller4;
+	private LevelReset lvlReset;
     // Use this for initialization
 
     public static bool[] isPlaying = new bool[4];//has a bool playing function so it will load only active players
@@ -119,6 +120,10 @@ public class CharacterManager : MonoBehaviour {
         {//only uses these when in character selection mode
             LoadPlayer();
             CheckPlayerActive(); 
+			ScoreManager.player1Score = 0;
+			ScoreManager.player2Score = 0;
+			ScoreManager.player3Score = 0;
+			ScoreManager.player4Score = 0;
         }
         else
         {//only uses this when in main game

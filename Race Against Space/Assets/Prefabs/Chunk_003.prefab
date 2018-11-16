@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 54265099392423304}
   - component: {fileID: 64474463229869608}
   - component: {fileID: 65955294921230998}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh_Platform_SheetMetal_01 (17)
   m_TagString: Platforms
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 54255048017049044}
   - component: {fileID: 64291947179932954}
   - component: {fileID: 65654207242423202}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh_Platform_SheetMetal_01 (12)
   m_TagString: Platforms
   m_Icon: {fileID: 0}
@@ -180,7 +180,7 @@ GameObject:
   - component: {fileID: 54506299508951870}
   - component: {fileID: 64979327760257550}
   - component: {fileID: 65223054476439552}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh_Platform_SheetMetal_01 (11)
   m_TagString: Platforms
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 54801348243783896}
   - component: {fileID: 64953977568201040}
   - component: {fileID: 65428170126119394}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh_Platform_SheetMetal_01 (16)
   m_TagString: Platforms
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 54708049072331936}
   - component: {fileID: 64180677583939842}
   - component: {fileID: 65687204946503026}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh_Platform_SheetMetal_01 (15)
   m_TagString: Platforms
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 54063638366380768}
   - component: {fileID: 64386936271856358}
   - component: {fileID: 65538840185312684}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh_Platform_SheetMetal_01 (13)
   m_TagString: Platforms
   m_Icon: {fileID: 0}
@@ -306,7 +306,7 @@ GameObject:
   - component: {fileID: 54430238407528070}
   - component: {fileID: 64223025005451650}
   - component: {fileID: 65409589060930096}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Mesh_Platform_SheetMetal_01 (14)
   m_TagString: Platforms
   m_Icon: {fileID: 0}
@@ -1515,5 +1515,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517690aa0c76e144ba8104bf44c88912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  platformMoveSpeed: 1
+  platformMoveSpeed: 1.5
   gameObjectDeleteY: -200

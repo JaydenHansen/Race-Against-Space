@@ -41,6 +41,7 @@ public class LevelReset : MonoBehaviour
             roundWinPlayer = listOfPlayers[0];
 
             blackhole.gameObject.SetActive(false);
+            listOfPlayers[0].GetComponent<PlayerController>().enabled = false;
         }
     }
 

@@ -88,22 +88,22 @@ public class PlayerController : MonoBehaviour
 
     void PlayerPunch()
     {
-        if (canPunch)
-        {//if punch is true you are able to punch
-            if (XCI.GetButton(XboxButton.RightBumper, controller))
-            {
-                anim.SetTrigger("Punch");
-                //anim.Play("Attack_01");
-            }
-                if (XCI.GetButton(XboxButton.RightBumper, controller) && facingRight)
-            {//if right bumper is hit, hit the player to the right
-                otherPlayer.AddForce(new Vector3(horizPunchPower, vertPunchPower, 0));
-            }
-           else if (XCI.GetButton(XboxButton.RightBumper, controller) && !facingRight)
-            {//if left bumper is hit, hit the player to the left
-                otherPlayer.AddForce(new Vector3(-horizPunchPower, vertPunchPower, 0));
-            }
-        }
+		if (canPunch) {//if punch is true you are able to punch
+			if (XCI.GetButton (XboxButton.RightBumper, controller)) {
+				anim.SetTrigger ("Punch");
+				//anim.Play("Attack_01");
+			}
+			if (XCI.GetButton (XboxButton.RightBumper, controller) && facingRight) {//if right bumper is hit, hit the player to the right
+				otherPlayer.AddForce (new Vector3 (horizPunchPower, vertPunchPower, 0));
+			} else if (XCI.GetButton (XboxButton.RightBumper, controller) && !facingRight) {//if left bumper is hit, hit the player to the left
+				otherPlayer.AddForce (new Vector3 (-horizPunchPower, vertPunchPower, 0));
+			}
+		} 
+		else 
+		{
+			if (XCI.GetButton (XboxButton.RightBumper, controller))
+				anim.SetTrigger ("Punch");
+		}
     }
 
     private void MovePlayer()

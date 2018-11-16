@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: aaa357a4bc040ea4bb6cc4220a4b0be6
-timeCreated: 1542176393
+guid: 4032523ace9904f418d5711b6266975a
+timeCreated: 1542327901
 licenseType: Pro
 ModelImporter:
   serializedVersion: 22
@@ -158,7 +158,7 @@ ModelImporter:
     4300012: Gloves_Low_L
     4300014: Boots_Low_R
     4300016: Boots_Low_L
-    7400000: Lanuch_01
+    7400000: Launch_01
     9500000: //RootNode
     13700000: Antenna
     13700002: Boots_Low_L

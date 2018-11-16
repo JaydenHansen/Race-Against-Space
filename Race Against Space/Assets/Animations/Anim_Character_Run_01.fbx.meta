@@ -199,8 +199,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Run_01
       takeName: Run_01
-      firstFrame: 1
-      lastFrame: 12
+      firstFrame: 34
+      lastFrame: 56
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
