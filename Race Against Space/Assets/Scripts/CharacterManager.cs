@@ -18,14 +18,16 @@ public class CharacterManager : MonoBehaviour {
 	private LevelReset lvlReset;
     // Use this for initialization
 
-    public static bool[] isPlaying = new bool[4];//has a bool playing function so it will load only active players
+    //has a bool playing function so it will load only active players
+    public static bool[] isPlaying = new bool[4];
 
 	void Start () {
         playersActive = 0; 
         characters = new List<GameObject>();
         foreach(Transform t in transform)
         {
-            characters.Add(t.gameObject);//adds all the players to the array of characters 
+            //adds all the players to the array of characters 
+            characters.Add(t.gameObject);
             t.gameObject.SetActive(false);
         }
 	}
@@ -33,56 +35,47 @@ public class CharacterManager : MonoBehaviour {
     public void Select(int index)
     {
         selectionIndex = index;
+        //if the character is active and selected again they will be unselected
         if (characters[selectionIndex].activeInHierarchy)
-        {//if the character is active and selected again they will be unselected
+        {
             isPlaying[index] = false; 
             characters[selectionIndex].SetActive(false);
-            playersActive = playersActive - 1;//keeps count of active players
+            //keeps count of active players
+            playersActive = playersActive - 1;
         }
+        //if the character is selected while inactive they will be activated and selected
         else if (!characters[selectionIndex].activeInHierarchy)
-        {//if the character is selected while inactive they will be activated and selected
+        {
             isPlaying[index] = true;
             characters[selectionIndex].SetActive(true);
-            playersActive = playersActive + 1; //keeps count of active players
+            //keeps count of active players
+            playersActive = playersActive + 1; 
         }
     }
 
     public void LoadPlayer()
     {
         //selects players based on keys, will need to be changed when access to four controllers is granted
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Select(0);
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            Select(1);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            Select(2);
-        }
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            Select(3);
-        }
+        //if the first player presses a they become active
         if (XCI.GetButtonDown(XboxButton.A, controller1))
         {
             Select(0);
         }
+        //if the second player presses a they become active
         if (XCI.GetButtonDown(XboxButton.A, controller2))
         {
             Select(1);
         }
+        //if the third player presses a they become active
         if (XCI.GetButtonDown(XboxButton.A, controller3))
         {
             Select(2);
         }
+        //if the fouyrth player presses a they become active
         if (XCI.GetButtonDown(XboxButton.A, controller4))
         {
             Select(3);
         }
-       // if (Input.GetKeyDown(KeyCode.Space) && playersActive > 1)
         if(XCI.GetButtonDown(XboxButton.Start) && (playersActive > 1))
         {//loads next scene when ready
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
