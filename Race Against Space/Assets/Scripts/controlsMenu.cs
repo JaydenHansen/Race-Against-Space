@@ -13,8 +13,10 @@ public class controlsMenu : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        //if start is pressed while the controls menu is active it will deactiveate it
         if (XCI.GetButtonDown(XboxButton.Start, controller))
         {
+            //sets the timescale to 1 so it will resume the game 
             Time.timeScale = 1;
         }
 	}
