@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (this.gameObject.activeInHierarchy)
+        if (this != null)
         {
 
 		    if (playerEnergy > 100) 
@@ -203,7 +203,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (this.gameObject.activeInHierarchy)
+        if (this != null)
         {
             PlayerPunch();
             CheckIfPlayerIsAlive();

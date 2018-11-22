@@ -38,10 +38,10 @@ public class energyReduce : MonoBehaviour {
         }
         
         //if the player is inactive in the hieracy set the energy to 0
-        if (!playerMove.gameObject.activeInHierarchy)
-        {
-            energyBar.value = 0;
-        }
+        //if (!playerMove.gameObject.activeInHierarchy)
+        //{
+        //    energyBar.value = 0;
+        //}
        
     }
 }
