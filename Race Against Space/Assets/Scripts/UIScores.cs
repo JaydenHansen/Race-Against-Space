@@ -73,7 +73,7 @@ public class UIScores : MonoBehaviour
             //sets the time scale to 0 so the game pauses
             Time.timeScale = 0;
             //when the controller
-			if (XCI.GetButton(XboxButton.Start, controller)) 
+			if (XCI.GetButton(XboxButton.Start)) 
 			{
                 //sets the timescale to 1 so it resumes the game speed
 				Time.timeScale = 1; 

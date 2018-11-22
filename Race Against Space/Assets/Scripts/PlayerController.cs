@@ -50,25 +50,30 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-		if (playerEnergy > 100) 
-		{
-			playerEnergy = 100; 
-		}
+        if (this.gameObject.activeInHierarchy)
+        {
 
-        Vector3 jumpRayDir = transform.TransformDirection(Vector3.down);
-        RaycastHit jumpRayHit;
-        isGrounded = Physics.Raycast(transform.position, jumpRayDir, out jumpRayHit, jumpRayLength);
+		    if (playerEnergy > 100) 
+		    {
+		    	playerEnergy = 100; 
+		    }
+        
 
-        Vector3 punchRayDir = transform.TransformDirection(Vector3.forward);
-        RaycastHit punchRayHit;
-        canPunch = Physics.Raycast(new Vector3(transform.position.x,(transform.position.y + 0.845f), transform.position.z), punchRayDir, out punchRayHit, punchRayLength);
+            Vector3 jumpRayDir = transform.TransformDirection(Vector3.down);
+            RaycastHit jumpRayHit;
+            isGrounded = Physics.Raycast(transform.position, jumpRayDir, out jumpRayHit, jumpRayLength);
 
-        otherPlayer = punchRayHit.rigidbody;
+            Vector3 punchRayDir = transform.TransformDirection(Vector3.forward);
+            RaycastHit punchRayHit;
+            canPunch = Physics.Raycast(new Vector3(transform.position.x,(transform.position.y + 0.845f), transform.position.z), punchRayDir, out punchRayHit, punchRayLength);
 
-		MovePlayer();
-        anim.SetBool("Jump", isGrounded);
+            otherPlayer = punchRayHit.rigidbody;
 
-        PauseGame();
+		    MovePlayer();
+            anim.SetBool("Jump", isGrounded);
+
+            PauseGame();
+        }
     }
     void PauseGame()
     {
@@ -198,9 +203,11 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-       
-        PlayerPunch();
-        CheckIfPlayerIsAlive();
+        if (this.gameObject.activeInHierarchy)
+        {
+            PlayerPunch();
+            CheckIfPlayerIsAlive();
+        }
     }
 
 }
