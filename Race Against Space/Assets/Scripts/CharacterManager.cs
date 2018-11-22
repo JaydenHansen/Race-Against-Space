@@ -80,6 +80,10 @@ public class CharacterManager : MonoBehaviour {
         {//loads next scene when ready
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+        if (XCI.GetButtonDown(XboxButton.B))
+        {//goes back to menu
+            SceneManager.LoadScene(0);
+        }
     }
 
     public void CheckPlayerActive()
