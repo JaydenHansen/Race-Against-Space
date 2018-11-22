@@ -31,6 +31,8 @@ public class UIScores : MonoBehaviour
     public GameObject player4Point3;
     public GameObject player4WinScreen;
 
+    public XboxController controller; 
+
     private bool gameOver = false; 
     
     private void Update()
@@ -71,7 +73,7 @@ public class UIScores : MonoBehaviour
             //sets the time scale to 0 so the game pauses
             Time.timeScale = 0;
             //when the controller
-			if (XCI.GetButton(XboxButton.Start)) 
+			if (XCI.GetButton(XboxButton.Start, controller)) 
 			{
                 //sets the timescale to 1 so it resumes the game speed
 				Time.timeScale = 1; 
