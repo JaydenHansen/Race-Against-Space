@@ -35,10 +35,10 @@ public class LevelReset : MonoBehaviour
     {
         listOfPlayers = GameObject.FindGameObjectsWithTag("Player");
 
-        if (listOfPlayers.Length <= 1)
+        if (listOfPlayers.Length == 1)
         {
-            AddRoundTally();
             roundWinPlayer = listOfPlayers[0];
+            AddRoundTally();
 
             blackhole.gameObject.SetActive(false);
             listOfPlayers[0].GetComponent<PlayerController>().enabled = false;

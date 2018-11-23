@@ -40,6 +40,10 @@ public class PlayerController : MonoBehaviour
     public bool paused = false;
     public GameObject controlsMenu;
 
+    public ParticleSystem jumpParticle;
+    public ParticleSystem jumpParticle1;
+    public ParticleSystem jumpParticle2;
+    public ParticleSystem jumpParticle3;
     void Awake()
     {
         //gets the rigidbody of the player
@@ -151,6 +155,24 @@ public class PlayerController : MonoBehaviour
         //if the "a" button is pressed you can jump as long as you are grounded
         {
             rigidBody.velocity = Vector2.up * jumpPower;
+
+            if (this.gameObject.name.Equals("Mesh_Character_Full_01"))
+            {
+                jumpParticle.Play();
+            }
+            else if (this.gameObject.name.Equals("Mesh_Character_Full_01 (1)"))
+            {
+                jumpParticle1.Play();
+            }
+            else if (this.gameObject.name.Equals("Mesh_Character_Full_01 (2)"))
+            {
+                jumpParticle2.Play();
+            }
+            else if (this.gameObject.name.Equals("Mesh_Character_Full_01 (3)"))
+            {
+
+            }
+
         }
 
         // punch animation

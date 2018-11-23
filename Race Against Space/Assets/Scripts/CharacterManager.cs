@@ -21,7 +21,12 @@ public class CharacterManager : MonoBehaviour {
     //has a bool playing function so it will load only active players
     public static bool[] isPlaying = new bool[4];
 
-	void Start () {
+    public ParticleSystem spawn;
+    public ParticleSystem spawn1;
+    public ParticleSystem spawn2;
+    public ParticleSystem spawn3;
+
+    void Start () {
         playersActive = 0; 
         characters = new List<GameObject>();
         foreach(Transform t in transform)
@@ -60,21 +65,25 @@ public class CharacterManager : MonoBehaviour {
         if (XCI.GetButtonDown(XboxButton.A, controller1))
         {
             Select(0);
+            spawn.Play();
         }
         //if the second player presses a they become active
         if (XCI.GetButtonDown(XboxButton.A, controller2))
         {
             Select(1);
+            spawn1.Play();
         }
         //if the third player presses a they become active
         if (XCI.GetButtonDown(XboxButton.A, controller3))
         {
             Select(2);
+            spawn2.Play();
         }
         //if the fouyrth player presses a they become active
         if (XCI.GetButtonDown(XboxButton.A, controller4))
         {
             Select(3);
+            spawn3.Play();
         }
         if(XCI.GetButtonDown(XboxButton.Start) && (playersActive > 1))
         {//loads next scene when ready
@@ -106,7 +115,10 @@ public class CharacterManager : MonoBehaviour {
         {
             if (isPlaying[i])
             {
-                characters[i].SetActive(true);
+                if (characters[i] != null)
+                {
+                    characters[i].SetActive(true);
+                }
             }
         }
     }
