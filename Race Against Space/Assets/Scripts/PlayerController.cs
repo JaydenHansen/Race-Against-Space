@@ -98,7 +98,7 @@ public class PlayerController : MonoBehaviour
     void PlayerPunch()
     {
 		if (canPunch) {//if punch is true you are able to punch
-			if (XCI.GetButton (XboxButton.RightBumper, controller)) {
+			if (XCI.GetButton (XboxButton.X, controller)) {
 				anim.SetTrigger ("Punch");
 				//anim.Play("Attack_01");
 			}
@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
 		} 
 		else 
 		{
-			if (XCI.GetButton (XboxButton.RightBumper, controller))
+			if (XCI.GetButton (XboxButton.X, controller))
 				anim.SetTrigger ("Punch");
 		}
     }
@@ -170,7 +170,7 @@ public class PlayerController : MonoBehaviour
             }
             else if (this.gameObject.name.Equals("Mesh_Character_Full_01 (3)"))
             {
-
+                jumpParticle3.Play();
             }
 
         }
