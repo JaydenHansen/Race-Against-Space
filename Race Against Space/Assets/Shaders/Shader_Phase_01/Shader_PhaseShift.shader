@@ -1,18 +1,19 @@
 // Shader created with Shader Forge v1.37 
 // Shader Forge (c) Neat Corporation / Joachim Holmer - http://www.acegikmo.com/shaderforge/
 // Note: Manually altering this data may prevent you from opening it in Shader Forge
-/*SF_DATA;ver:1.37;sub:START;pass:START;ps:flbk:,iptp:0,cusa:False,bamd:0,cgin:,lico:1,lgpr:1,limd:3,spmd:1,trmd:0,grmd:0,uamb:True,mssp:True,bkdf:True,hqlp:False,rprd:True,enco:False,rmgx:True,imps:True,rpth:0,vtps:0,hqsc:True,nrmq:1,nrsp:0,vomd:0,spxs:False,tesm:0,olmd:1,culm:0,bsrc:0,bdst:1,dpts:2,wrdp:True,dith:0,atcv:False,rfrpo:True,rfrpn:Refraction,coma:15,ufog:True,aust:True,igpj:False,qofs:0,qpre:2,rntp:3,fgom:False,fgoc:False,fgod:False,fgor:False,fgmd:0,fgcr:0.5,fgcg:0.5,fgcb:0.5,fgca:1,fgde:0.01,fgrn:0,fgrf:300,stcl:False,stva:128,stmr:255,stmw:255,stcp:6,stps:0,stfa:0,stfz:0,ofsf:0,ofsu:0,f2p0:False,fnsp:False,fnfb:False,fsmp:False;n:type:ShaderForge.SFN_Final,id:2865,x:32719,y:32712,varname:node_2865,prsc:2|diff-7736-RGB,spec-9339-R,gloss-9339-A,normal-5964-RGB,emission-7495-OUT,clip-614-OUT;n:type:ShaderForge.SFN_Tex2d,id:7736,x:32172,y:32291,ptovrint:True,ptlb:Base Color,ptin:_MainTex,varname:_MainTex,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:5964,x:32172,y:32639,ptovrint:True,ptlb:Normal Map,ptin:_BumpMap,varname:_BumpMap,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,ntxv:3,isnm:True;n:type:ShaderForge.SFN_Multiply,id:7495,x:32291,y:33016,varname:node_7495,prsc:2|A-6000-RGB,B-9611-OUT,C-233-OUT;n:type:ShaderForge.SFN_ValueProperty,id:233,x:32016,y:33145,ptovrint:False,ptlb:PhaseShift_BloomIntensity,ptin:_PhaseShift_BloomIntensity,varname:node_233,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,v1:5;n:type:ShaderForge.SFN_OneMinus,id:9611,x:32016,y:33006,varname:node_9611,prsc:2|IN-614-OUT;n:type:ShaderForge.SFN_Color,id:6000,x:32016,y:32850,ptovrint:False,ptlb:GlowColor,ptin:_GlowColor,varname:node_6000,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,c1:0,c2:0.7058824,c3:1,c4:1;n:type:ShaderForge.SFN_Add,id:7137,x:31694,y:33063,varname:node_7137,prsc:2|A-8464-G,B-4566-OUT;n:type:ShaderForge.SFN_RemapRange,id:4566,x:31478,y:33129,varname:node_4566,prsc:2,frmn:0,frmx:1,tomn:1,tomx:-1|IN-2684-OUT;n:type:ShaderForge.SFN_Slider,id:2684,x:31131,y:33133,ptovrint:False,ptlb:PhaseShift,ptin:_PhaseShift,varname:node_2684,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,min:-0.003,cur:-0.003,max:0.6;n:type:ShaderForge.SFN_Clamp01,id:614,x:31896,y:33325,varname:node_614,prsc:2|IN-7137-OUT;n:type:ShaderForge.SFN_Tex2d,id:8464,x:31288,y:32906,ptovrint:False,ptlb:DissolveNoise_StreamNormals,ptin:_DissolveNoise_StreamNormals,varname:node_8464,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:ff6c2810510877f47971debf35415c5d,ntxv:2,isnm:False|UVIN-2553-UVOUT;n:type:ShaderForge.SFN_Panner,id:2553,x:31017,y:32942,varname:node_2553,prsc:2,spu:-1,spv:1|UVIN-145-UVOUT,DIST-7385-OUT;n:type:ShaderForge.SFN_Time,id:2463,x:30532,y:32892,varname:node_2463,prsc:2;n:type:ShaderForge.SFN_Multiply,id:7385,x:30792,y:33047,varname:node_7385,prsc:2|A-2463-T,B-2823-OUT;n:type:ShaderForge.SFN_Slider,id:2823,x:30427,y:33118,ptovrint:False,ptlb:PhaseShift_Scroll,ptin:_PhaseShift_Scroll,varname:node_2823,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,min:0,cur:0.104,max:1;n:type:ShaderForge.SFN_TexCoord,id:145,x:30708,y:32722,varname:node_145,prsc:2,uv:0,uaff:False;n:type:ShaderForge.SFN_Tex2d,id:9339,x:32172,y:32467,ptovrint:False,ptlb:Metalic_Gloss,ptin:_Metalic_Gloss,varname:node_9339,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,ntxv:2,isnm:False;proporder:5964-7736-6000-233-2684-2823-8464-9339;pass:END;sub:END;*/
+/*SF_DATA;ver:1.37;sub:START;pass:START;ps:flbk:,iptp:0,cusa:False,bamd:0,cgin:,lico:1,lgpr:1,limd:3,spmd:1,trmd:0,grmd:0,uamb:True,mssp:True,bkdf:True,hqlp:False,rprd:True,enco:False,rmgx:True,imps:True,rpth:0,vtps:0,hqsc:True,nrmq:1,nrsp:0,vomd:0,spxs:False,tesm:0,olmd:1,culm:0,bsrc:0,bdst:1,dpts:2,wrdp:True,dith:0,atcv:False,rfrpo:True,rfrpn:Refraction,coma:15,ufog:True,aust:True,igpj:False,qofs:0,qpre:2,rntp:3,fgom:False,fgoc:False,fgod:False,fgor:False,fgmd:0,fgcr:0.5,fgcg:0.5,fgcb:0.5,fgca:1,fgde:0.01,fgrn:0,fgrf:300,stcl:False,stva:128,stmr:255,stmw:255,stcp:6,stps:0,stfa:0,stfz:0,ofsf:0,ofsu:0,f2p0:False,fnsp:False,fnfb:False,fsmp:False;n:type:ShaderForge.SFN_Final,id:2865,x:32719,y:32712,varname:node_2865,prsc:2|diff-7736-RGB,spec-9339-R,gloss-9339-A,normal-5964-RGB,emission-3402-OUT,difocc-8386-R,clip-614-OUT;n:type:ShaderForge.SFN_Tex2d,id:7736,x:32368,y:32314,ptovrint:True,ptlb:Base Color,ptin:_MainTex,varname:_MainTex,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:5964,x:32061,y:32533,ptovrint:True,ptlb:Normal Map,ptin:_BumpMap,varname:_BumpMap,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,ntxv:3,isnm:True;n:type:ShaderForge.SFN_Multiply,id:7495,x:32028,y:33002,varname:node_7495,prsc:2|A-6000-RGB,B-9611-OUT,C-8195-OUT;n:type:ShaderForge.SFN_OneMinus,id:9611,x:31805,y:33056,varname:node_9611,prsc:2|IN-614-OUT;n:type:ShaderForge.SFN_Color,id:6000,x:31689,y:32791,ptovrint:False,ptlb:GlowColor,ptin:_GlowColor,varname:node_6000,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,c1:0,c2:0.8758622,c3:1,c4:1;n:type:ShaderForge.SFN_Add,id:7137,x:31527,y:33142,varname:node_7137,prsc:2|A-8464-G,B-4566-OUT;n:type:ShaderForge.SFN_RemapRange,id:4566,x:31290,y:33223,varname:node_4566,prsc:2,frmn:0,frmx:1,tomn:1,tomx:-1|IN-2684-OUT;n:type:ShaderForge.SFN_Slider,id:2684,x:30909,y:33236,ptovrint:False,ptlb:PhaseShift,ptin:_PhaseShift,varname:node_2684,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,min:-0.003,cur:-0.003,max:0.6;n:type:ShaderForge.SFN_Clamp01,id:614,x:31641,y:33325,varname:node_614,prsc:2|IN-7137-OUT;n:type:ShaderForge.SFN_Tex2d,id:8464,x:31499,y:32860,ptovrint:False,ptlb:DissolveNoise_StreamNormals,ptin:_DissolveNoise_StreamNormals,varname:node_8464,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,tex:05f4c01d16340d5428d5297aaa6cd86b,ntxv:2,isnm:False|UVIN-2553-UVOUT;n:type:ShaderForge.SFN_Panner,id:2553,x:31248,y:32820,varname:node_2553,prsc:2,spu:-1,spv:1|UVIN-145-UVOUT,DIST-7385-OUT;n:type:ShaderForge.SFN_Time,id:2463,x:30821,y:32827,varname:node_2463,prsc:2;n:type:ShaderForge.SFN_Multiply,id:7385,x:31025,y:33020,varname:node_7385,prsc:2|A-2463-T,B-788-OUT;n:type:ShaderForge.SFN_TexCoord,id:145,x:31021,y:32683,varname:node_145,prsc:2,uv:0,uaff:False;n:type:ShaderForge.SFN_Tex2d,id:9339,x:32092,y:32318,ptovrint:False,ptlb:Metalic_Gloss,ptin:_Metalic_Gloss,varname:node_9339,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,ntxv:2,isnm:False;n:type:ShaderForge.SFN_Tex2d,id:8243,x:31676,y:32547,ptovrint:False,ptlb:Emission,ptin:_Emission,varname:node_8243,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Add,id:3402,x:32213,y:32939,varname:node_3402,prsc:2|A-6845-OUT,B-7495-OUT;n:type:ShaderForge.SFN_Vector1,id:788,x:30646,y:33236,varname:node_788,prsc:2,v1:0.104;n:type:ShaderForge.SFN_Vector1,id:8195,x:31805,y:33181,varname:node_8195,prsc:2,v1:5;n:type:ShaderForge.SFN_Tex2d,id:8386,x:32236,y:32685,ptovrint:False,ptlb:AO,ptin:_AO,varname:node_8386,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,ntxv:0,isnm:False;n:type:ShaderForge.SFN_Multiply,id:6845,x:31881,y:32668,varname:node_6845,prsc:2|A-8243-RGB,B-6000-RGB;n:type:ShaderForge.SFN_Slider,id:2163,x:30847,y:33340,ptovrint:False,ptlb:PhaseShift1,ptin:_PhaseShift1,varname:_PhaseShift_copy,prsc:2,glob:False,taghide:False,taghdr:False,tagprd:False,tagnsco:False,tagnrm:False,min:0,cur:0,max:6;proporder:7736-5964-8243-9339-8386-6000-2684-8464-2163;pass:END;sub:END;*/
 
-Shader "Shader Forge/Dissolve" {
+Shader "Shader Forge/PhaseShift" {
     Properties {
-        _BumpMap ("Normal Map", 2D) = "bump" {}
         _MainTex ("Base Color", 2D) = "white" {}
-        _GlowColor ("GlowColor", Color) = (0,0.7058824,1,1)
-        _PhaseShift_BloomIntensity ("PhaseShift_BloomIntensity", Float ) = 5
-        _PhaseShift ("PhaseShift", Range(-0.003, 0.6)) = -0.003
-        _PhaseShift_Scroll ("PhaseShift_Scroll", Range(0, 1)) = 0.104
-        _DissolveNoise_StreamNormals ("DissolveNoise_StreamNormals", 2D) = "black" {}
+        _BumpMap ("Normal Map", 2D) = "bump" {}
+        _Emission ("Emission", 2D) = "white" {}
         _Metalic_Gloss ("Metalic_Gloss", 2D) = "black" {}
+        _AO ("AO", 2D) = "white" {}
+        _GlowColor ("GlowColor", Color) = (0,0.8758622,1,1)
+        _PhaseShift ("PhaseShift", Range(-0.003, 0.6)) = -0.003
+        _DissolveNoise_StreamNormals ("DissolveNoise_StreamNormals", 2D) = "black" {}
+        _PhaseShift1 ("PhaseShift1", Range(0, 6)) = 0
         [HideInInspector]_Cutoff ("Alpha cutoff", Range(0,1)) = 0.5
     }
     SubShader {
@@ -48,12 +49,12 @@ Shader "Shader Forge/Dissolve" {
             uniform float4 _TimeEditor;
             uniform sampler2D _MainTex; uniform float4 _MainTex_ST;
             uniform sampler2D _BumpMap; uniform float4 _BumpMap_ST;
-            uniform float _PhaseShift_BloomIntensity;
             uniform float4 _GlowColor;
             uniform float _PhaseShift;
             uniform sampler2D _DissolveNoise_StreamNormals; uniform float4 _DissolveNoise_StreamNormals_ST;
-            uniform float _PhaseShift_Scroll;
             uniform sampler2D _Metalic_Gloss; uniform float4 _Metalic_Gloss_ST;
+            uniform sampler2D _Emission; uniform float4 _Emission_ST;
+            uniform sampler2D _AO; uniform float4 _AO_ST;
             struct VertexInput {
                 float4 vertex : POSITION;
                 float3 normal : NORMAL;
@@ -109,7 +110,7 @@ Shader "Shader Forge/Dissolve" {
                 float3 normalDirection = normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
                 float3 viewReflectDirection = reflect( -viewDirection, normalDirection );
                 float4 node_2463 = _Time + _TimeEditor;
-                float2 node_2553 = (i.uv0+(node_2463.g*_PhaseShift_Scroll)*float2(-1,1));
+                float2 node_2553 = (i.uv0+(node_2463.g*0.104)*float2(-1,1));
                 float4 _DissolveNoise_StreamNormals_var = tex2D(_DissolveNoise_StreamNormals,TRANSFORM_TEX(node_2553, _DissolveNoise_StreamNormals));
                 float node_614 = saturate((_DissolveNoise_StreamNormals_var.g+(_PhaseShift*-2.0+1.0)));
                 clip(node_614 - 0.5);
@@ -210,9 +211,12 @@ Shader "Shader Forge/Dissolve" {
                 float3 directDiffuse = ((1 +(fd90 - 1)*nlPow5) * (1 + (fd90 - 1)*nvPow5) * NdotL) * attenColor;
                 float3 indirectDiffuse = float3(0,0,0);
                 indirectDiffuse += gi.indirect.diffuse;
+                float4 _AO_var = tex2D(_AO,TRANSFORM_TEX(i.uv0, _AO));
+                indirectDiffuse *= _AO_var.r; // Diffuse AO
                 float3 diffuse = (directDiffuse + indirectDiffuse) * diffuseColor;
 ////// Emissive:
-                float3 emissive = (_GlowColor.rgb*(1.0 - node_614)*_PhaseShift_BloomIntensity);
+                float4 _Emission_var = tex2D(_Emission,TRANSFORM_TEX(i.uv0, _Emission));
+                float3 emissive = ((_Emission_var.rgb*_GlowColor.rgb)+(_GlowColor.rgb*(1.0 - node_614)*5.0));
 /// Final Color:
                 float3 finalColor = diffuse + specular + emissive;
                 fixed4 finalRGBA = fixed4(finalColor,1);
@@ -250,12 +254,11 @@ Shader "Shader Forge/Dissolve" {
             uniform float4 _TimeEditor;
             uniform sampler2D _MainTex; uniform float4 _MainTex_ST;
             uniform sampler2D _BumpMap; uniform float4 _BumpMap_ST;
-            uniform float _PhaseShift_BloomIntensity;
             uniform float4 _GlowColor;
             uniform float _PhaseShift;
             uniform sampler2D _DissolveNoise_StreamNormals; uniform float4 _DissolveNoise_StreamNormals_ST;
-            uniform float _PhaseShift_Scroll;
             uniform sampler2D _Metalic_Gloss; uniform float4 _Metalic_Gloss_ST;
+            uniform sampler2D _Emission; uniform float4 _Emission_ST;
             struct VertexInput {
                 float4 vertex : POSITION;
                 float3 normal : NORMAL;
@@ -299,7 +302,7 @@ Shader "Shader Forge/Dissolve" {
                 float3 normalLocal = _BumpMap_var.rgb;
                 float3 normalDirection = normalize(mul( normalLocal, tangentTransform )); // Perturbed normals
                 float4 node_2463 = _Time + _TimeEditor;
-                float2 node_2553 = (i.uv0+(node_2463.g*_PhaseShift_Scroll)*float2(-1,1));
+                float2 node_2553 = (i.uv0+(node_2463.g*0.104)*float2(-1,1));
                 float4 _DissolveNoise_StreamNormals_var = tex2D(_DissolveNoise_StreamNormals,TRANSFORM_TEX(node_2553, _DissolveNoise_StreamNormals));
                 float node_614 = saturate((_DissolveNoise_StreamNormals_var.g+(_PhaseShift*-2.0+1.0)));
                 clip(node_614 - 0.5);
@@ -386,7 +389,6 @@ Shader "Shader Forge/Dissolve" {
             uniform float4 _TimeEditor;
             uniform float _PhaseShift;
             uniform sampler2D _DissolveNoise_StreamNormals; uniform float4 _DissolveNoise_StreamNormals_ST;
-            uniform float _PhaseShift_Scroll;
             struct VertexInput {
                 float4 vertex : POSITION;
                 float2 texcoord0 : TEXCOORD0;
@@ -413,7 +415,7 @@ Shader "Shader Forge/Dissolve" {
             float4 frag(VertexOutput i) : COLOR {
                 float3 viewDirection = normalize(_WorldSpaceCameraPos.xyz - i.posWorld.xyz);
                 float4 node_2463 = _Time + _TimeEditor;
-                float2 node_2553 = (i.uv0+(node_2463.g*_PhaseShift_Scroll)*float2(-1,1));
+                float2 node_2553 = (i.uv0+(node_2463.g*0.104)*float2(-1,1));
                 float4 _DissolveNoise_StreamNormals_var = tex2D(_DissolveNoise_StreamNormals,TRANSFORM_TEX(node_2553, _DissolveNoise_StreamNormals));
                 float node_614 = saturate((_DissolveNoise_StreamNormals_var.g+(_PhaseShift*-2.0+1.0)));
                 clip(node_614 - 0.5);
@@ -449,12 +451,11 @@ Shader "Shader Forge/Dissolve" {
             #pragma target 3.0
             uniform float4 _TimeEditor;
             uniform sampler2D _MainTex; uniform float4 _MainTex_ST;
-            uniform float _PhaseShift_BloomIntensity;
             uniform float4 _GlowColor;
             uniform float _PhaseShift;
             uniform sampler2D _DissolveNoise_StreamNormals; uniform float4 _DissolveNoise_StreamNormals_ST;
-            uniform float _PhaseShift_Scroll;
             uniform sampler2D _Metalic_Gloss; uniform float4 _Metalic_Gloss_ST;
+            uniform sampler2D _Emission; uniform float4 _Emission_ST;
             struct VertexInput {
                 float4 vertex : POSITION;
                 float2 texcoord0 : TEXCOORD0;
@@ -482,11 +483,12 @@ Shader "Shader Forge/Dissolve" {
                 UnityMetaInput o;
                 UNITY_INITIALIZE_OUTPUT( UnityMetaInput, o );
                 
+                float4 _Emission_var = tex2D(_Emission,TRANSFORM_TEX(i.uv0, _Emission));
                 float4 node_2463 = _Time + _TimeEditor;
-                float2 node_2553 = (i.uv0+(node_2463.g*_PhaseShift_Scroll)*float2(-1,1));
+                float2 node_2553 = (i.uv0+(node_2463.g*0.104)*float2(-1,1));
                 float4 _DissolveNoise_StreamNormals_var = tex2D(_DissolveNoise_StreamNormals,TRANSFORM_TEX(node_2553, _DissolveNoise_StreamNormals));
                 float node_614 = saturate((_DissolveNoise_StreamNormals_var.g+(_PhaseShift*-2.0+1.0)));
-                o.Emission = (_GlowColor.rgb*(1.0 - node_614)*_PhaseShift_BloomIntensity);
+                o.Emission = ((_Emission_var.rgb*_GlowColor.rgb)+(_GlowColor.rgb*(1.0 - node_614)*5.0));
                 
                 float4 _MainTex_var = tex2D(_MainTex,TRANSFORM_TEX(i.uv0, _MainTex));
                 float3 diffColor = _MainTex_var.rgb;

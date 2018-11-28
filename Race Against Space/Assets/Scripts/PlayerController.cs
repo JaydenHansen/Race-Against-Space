@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using XboxCtrlrInput;
+using EZCameraShake;
 
 public class PlayerController : MonoBehaviour
 {
@@ -31,11 +32,15 @@ public class PlayerController : MonoBehaviour
     public float horizPunchPower = 100f;
     public float vertPunchPower = 100f;
 
-    public Animator anim;
+    public float screenShakeMagnitude = 10f;
+    public float screenShakeRoughness = 10f;
+    public float screenShakeFadeIn = 0.1f;
+    public float screenShakeFadeOut = 1f;
 
-    // public float boostDuration = 2.0f;
-    // private float boostTimer;
-    // public float boostForce = 100f;
+    public ParticleSystem deathParticle;
+
+    public Animator anim;
+   
 
     public bool paused = false;
     public GameObject controlsMenu;
@@ -48,8 +53,8 @@ public class PlayerController : MonoBehaviour
     {
         //gets the rigidbody of the player
         rigidBody = GetComponent<Rigidbody>();
-
         anim = GetComponent<Animator>();
+        
     }
 
     private void Update()
@@ -98,19 +103,21 @@ public class PlayerController : MonoBehaviour
     void PlayerPunch()
     {
 		if (canPunch) {//if punch is true you are able to punch
-			if (XCI.GetButton (XboxButton.X, controller)) {
+			if (XCI.GetButtonDown (XboxButton.RightBumper, controller)) {
 				anim.SetTrigger ("Punch");
 				//anim.Play("Attack_01");
 			}
-			if (XCI.GetButton (XboxButton.X, controller) && facingRight) {//if right bumper is hit, hit the player to the right
+			if (XCI.GetButtonDown(XboxButton.RightBumper, controller) && facingRight) {//if right bumper is hit, hit the player to the right
 				otherPlayer.AddForce (new Vector3 (horizPunchPower, vertPunchPower, 0));
-			} else if (XCI.GetButton (XboxButton.X, controller) && !facingRight) {//if left bumper is hit, hit the player to the left
-				otherPlayer.AddForce (new Vector3 (-horizPunchPower, vertPunchPower, 0));
-			}
+                CameraShaker.Instance.ShakeOnce(screenShakeMagnitude, screenShakeRoughness, screenShakeFadeIn, screenShakeFadeOut);
+			} else if (XCI.GetButtonDown(XboxButton.RightBumper, controller) && !facingRight) {//if left bumper is hit, hit the player to the left
+                otherPlayer.AddForce (new Vector3 (-horizPunchPower, vertPunchPower, 0));
+                CameraShaker.Instance.ShakeOnce(screenShakeMagnitude, screenShakeRoughness, screenShakeFadeIn, screenShakeFadeOut);
+            }
 		} 
 		else 
 		{
-			if (XCI.GetButton (XboxButton.X, controller))
+			if (XCI.GetButtonDown(XboxButton.RightBumper, controller))
 				anim.SetTrigger ("Punch");
 		}
     }
@@ -124,15 +131,6 @@ public class PlayerController : MonoBehaviour
         Vector3 movement = new Vector3(axisX, 0, 0);
 
         rigidBody.AddForce(movement * movementSpeed);
-
-        //if (axisX > 0 || axisX < 0)
-        //{
-        //    anim.Play("Run_01");
-        //}
-        //else if (axisX == 0)
-        //{
-        //    anim.Play("Idle");
-        //}
 
         anim.SetFloat("Movement", movement.magnitude);
 
@@ -175,12 +173,6 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        // punch animation
-        //if (XCI.GetButton(XboxButton.A, controller))
-        //{
-        //    anim.Play("Launch_01");
-        //}
-
         if (rigidBody.velocity.y < 0)
         {
             rigidBody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
@@ -189,21 +181,6 @@ public class PlayerController : MonoBehaviour
         {
             rigidBody.velocity += Vector3.up * Physics.gravity.y * (lowJumpMultiplier - 1) * Time.deltaTime;
         }
-
-        // else if (XCI.GetButton(XboxButton.A, controller) && !isGrounded)
-        // {
-        //     boostTimer -= Time.deltaTime;
-        // 
-        //     if (boostTimer > 0)
-        //     {
-        //         rigidBody.AddForce(new Vector3(0, boostForce, 0));
-        //     }
-        // }
-        // 
-        // if (isGrounded)
-        // {
-        //     boostTimer = boostDuration;
-        // }
 
         if (axisX > 0 && !facingRight)
             Flip();
@@ -214,6 +191,7 @@ public class PlayerController : MonoBehaviour
     {
         if (playerEnergy <= 0)
         {
+            Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

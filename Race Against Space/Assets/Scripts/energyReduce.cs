@@ -11,12 +11,8 @@ public class energyReduce : MonoBehaviour {
     //public Slider energyBar;
     public Text deathText;
     public RawImage playerIcon;
-    // Use this for initialization
 
-    public ParticleSystem death;
-    //public ParticleSystem death1;
-    //public ParticleSystem death2;
-    //public ParticleSystem death3;
+    // Use this for initialization
     void Start () {
         PlayerUI.SetActive(true);//sets the player UI to active
 	}
@@ -41,7 +37,6 @@ public class energyReduce : MonoBehaviour {
             deathText.text = "Connection Lost";
             Destroy(energyBar);
             Destroy(playerIcon);
-            death.Play();
         }
         
         //if the player is inactive in the hieracy set the energy to 0

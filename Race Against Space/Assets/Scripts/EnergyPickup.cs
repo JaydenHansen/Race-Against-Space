@@ -5,12 +5,7 @@ using UnityEngine;
 public class EnergyPickup : MonoBehaviour {
 
     public int pickupAmount = 10;
-   // public AnimationCurve hoverY;
-
-   // private void Update()
-    //{
-   //     this.transform.localPosition = new Vector3(this.transform.localPosition.x, hoverY.Evaluate(Time.time), this.transform.localPosition.z) ;
-  //  }
+    //public ParticleSystem energypickupParticle;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,6 +17,7 @@ public class EnergyPickup : MonoBehaviour {
         {
             //increases the players energy if the interact with the energy pickup
             player.playerEnergy += pickupAmount;
+            // Instantiate(energypickupParticle, transform.position, Quaternion.identity);
             gameObject.SetActive(false);
         }
     }
